@@ -1,0 +1,31 @@
+{
+  "scenario_id": "GS-016",
+  "name": "Climate Summit Protest",
+  "input_text": "Peaceful march of 50,000 activists at COP summit. No arrests.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "politics"
+      ],
+      "must_activate_agents": [
+        "political_studies_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_I"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 0,
+      "forbidden_confidence": "LOW"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "activists"
+      ],
+      "must_not_contain": [
+        "violent"
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+INTELLIGENCE BRIEF
+==================
+Subject: Middle East Oil Price in 2026
+Date: 2025-12-26
+Classification: UNCLASSIFIED
+
+**ENGLISH BRIEF**  
+
+**1. Executive Summary**  
+- Decision: 75% probability of Middle East oil prices collapsing to $0/bbl in 2026 is **invalid**.  
+- Probability: 0% likelihood of $0/bbl outcome; highest-probability scenario is "Supply easing" (51.2%) [Context Sentiment, 2025].  
+- Confidence: Low (0.6) due to model bias, zero verified OPEC+ compliance data, and contradictory scenario probabilities [Weak Signals, 2025].  
+
+**2. Situation Assessment**  
+*Facts:*  
+- Scenario modeling shows "Supply easing" (51.2%), "Baseline supply" (34.0%), and "Supply tightening" (14.8%) as the only quantified outcomes [Scenario Probabilities, 2025].  
+- Policy impact risk score is 0.25 (low volatility), with neutral energy-sector pressure [Policy Impact, 2025].  
+- 10 articles analyzed; sentiment score +0.16; no verified OPEC+ compliance data gathered [Context Sentiment, 2025; Walled Garden Query, 2025].  
+- 1 bias flag identified: Weak alignment between temporal drivers and context themes [Weak Signals, 2025].  
+
+*Interpretation:*  
+- The claimed 75% probability of $0/bbl collapse is unsupported by scenario probabilities and contradicts the dominant "Supply easing" scenario (51.2%) [Executive Summary vs. Scenario Probabilities, 2025].  
+- Model validity is compromised by absence of empirical evidence (e.g., OPEC+ production data) and internal inconsistency [Weak Signals, 2025].  
+
+**3. Forecast Analysis**  
+*Scenarios:*  
+- **Supply easing (51.2%)**: Brent $75–90/bbl range; driven by OPEC+ cohesion and China-India demand [Context Sentiment, 2025].  
+- **Baseline supply (34.0%)**: Moderate volatility; Brent near current levels [Scenario Probabilities, 2025].  
+- **Supply tightening (14.8%)**: Brent >$90/bbl; requires OPEC+ cuts >3M bpd [Executive Summary, 2025].  
+
+*Drivers:*  
+- China-India demand acceleration, EV adoption rates, OPEC+ compliance [Context Sentiment, 2025].  
+*Constraints:*  
+- Zero verified data on Saudi spare capacity or Iraq-KRG disputes [Walled Garden Query, 2025].  
+- Model bias toward "Supply easing" (51.2%) despite executive summary’s $0/bbl claim [Weak Signals, 2025].  
+
+**4. Key Risks & Uncertainties**  
+*Known Unknowns:*  
+- OPEC+ production compliance levels (0 verified facts) [Walled Garden Query, 2025].  
+- Impact of Venezuela blockade on sustained supply (no GDELT/ACLED event data) [Political Insights, 2025].  
+*Falsification Criteria:*  
+- **If** OPEC+ cuts exceed 3M bpd *and* global recession indicators activate *and* EV adoption >50% by Q4 2025 → $0/bbl scenario gains credibility.  
+- **If** Brent remains >$75/bbl in Q1 2026 → $0/bbl scenario is invalidated.  
+
+**5. Strategic Implications**  
+- Monitor OPEC+ compliance data (Saudi spare capacity, Iraq-KRG disputes) and China-India demand metrics.  
+- Track EV adoption rates and global recession indicators as primary signposts.  
+- Disregard $0/bbl collapse scenario until empirical evidence aligns with model inputs.  
+
+---  
+
+**الملخص التنفيذي**  
+- القرار: احتمال 75% لانهيار أسعار النفط في الشرق الأوسط إلى 0 دولار/برميل في 2026 **غير صحيح**.  
+- الاحتمال: 0% لحدوث الانهيار إلى 0 دولار/برميل؛ السيناريو الأرجح هو "تخفيف العرض" (51.2%) [السياق العاطفي، 2025].  
+- الثقة: منخفضة (0.6) بسبب التحيز النموذجي وغياب بيانات التزام أوبك+ المُوثَّقة وتناقض الاحتمالات السيناريوية [الإشارات الضعيفة، 2025].  
+
+**2. تقييم الوضع**  
+*الحقائق:*  
+- النماذج تُظهر سيناريوهات "تخفيف العرض" (51.2%) و"العرض الأساسي" (34.0%) و"تشديد العرض" (14.8%) كنتائج مُقَيَّمة [الاحتمالات السيناريوية، 2025].  
+- درجة مخاطر التأثير السياسي 0.25 (تقلبات منخفضة) مع ضغط محايد في قطاع الطاقة [التأثير السياسي، 2025].  
+- تحليل 10 مقالات؛ الدرجة العاطفية +0.16؛ لا توجد بيانات مُوثَّقة عن التزام أوبك+ [السياق العاطفي، 2025؛ استعلام الحديقة المغلقة، 2025].  
+- علامة تحيز واحدة مُحددة: ضعف التوافق بين العوامل الزمنية والمواضيع السياقية [الإشارات الضعيفة، 2025].  
+
+*التفسير:*  
+- الادعاء بـ 75% احتمال لانهيار الأسعار إلى 0 دولار/برميل غير مدعوم بالبيانات ويتعارض مع سيناريو "تخفيف العرض" المهيمن (51.2%) [الملخص التنفيذي مقابل الاحتمالات السيناريوية، 2025].  
+- صلاحية النموذج مُعَطَّلة بسبب غياب الأدلة التجريبية (مثل بيانات إنتاج أوبك+) وعدم الاتساق الداخلي [الإشارات الضعيفة، 2025].  
+
+**3. تحليل التوقعات**  
+*السيناريوهات:*  
+- **تخفيف العرض (51.2%)**: برنت بين 75–90 دولار/برميل؛ مدفوع بتماسك أوبك+ وطلب الصين والهند [السياق العاطفي، 2025].  
+- **العرض الأساسي (34.0%)**: تقلبات معتدلة؛ برنت قرب المستويات الحالية [الاحتمالات السيناريوية، 2025].  
+- **تشديد العرض (14.8%)**: برنت >90 دولار/برميل؛ يتطلب خفض إنتاج أوبك+ بأكثر من 3 ملايين برميل/يوم [الملخص التنفيذي، 2025].  
+
+*العوامل المحركة:*  
+- تسارع طلب الصين والهند، ومعدلات اعتماد المركبات الكهربائية، والتزام أوبك+ [السياق العاطفي، 2025].  
+*القيود:*  
+- لا توجد بيانات مُوثَّقة عن الطاقة الاحتياطية السعودية أو نزاعات إنتاج كركوك [استعلام الحديقة المغلقة، 2025].  
+- تحيز النموذج لـ"تخفيف العرض" (51.2%) رغم ادعاء الملخص التنفيذي بانهيار الأسعار [الإشارات الضعيفة، 2025].  
+
+**4. المخاطر الرئيسية والغموض**  
+*المجهول المعروف:*  
+- مستويات التزام أوبك+ بالإنتاج (لا توجد حقائق مُوثَّقة) [استعلام الحديقة المغلقة، 2025].  
+- تأثير حصار فنزويلا على استقرار العرض (لا توجد بيانات أحداث GDELT/ACLED) [الرؤى السياسية، 2025].  
+*معايير التكذيب:*  
+- **إذا** تجاوز خفض أوبك+ 3 ملايين برميل/يوم *و* تفعيل مؤشرات الركود العالمي *و* تجاوز اعتماد المركبات الكهربائية 50% بحلول الربع الرابع 2025 → يصبح سيناريو 0 دولار/برميل مُعَتَبَرًا.  
+- **إذا** بقي برنت >75 دولار/برميل في الربع الأول 2026 → يُكذَّب سيناريو 0 دولار/برميل.  
+
+**5. الآثار الاستراتيجية**  
+- راقب بيانات التزام أوبك+ (الطاقة الاحتياطية السعودية، نزاعات كركوك) ومقاييس طلب الصين والهند.  
+- تتبّع معدلات اعتماد المركبات الكهربائية ومؤشرات الركود العالمي كعلامات رئيسية.  
+- تجاهل سيناريو الانهيار إلى 0 دولار/برميل حتى تتوافق الأدلة التجريبية مع مدخلات النموذج.
+
+## Appendix A: Quantitative Indicators
+## Appendix B: Primary Source Data
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.

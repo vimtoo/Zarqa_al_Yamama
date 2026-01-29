@@ -1,0 +1,44 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T09:55:31.762882
+Request ID: req_20251222_124943_6bd63dd8
+
+Executive Summary
+Erdogan is expected to run in Türkiye's 2028 presidential election, constitutionally eligible under 2017 amendments allowing two five-year terms. Indications include his 2023 re-election victory (52.2% of votes) and AKP's lack of viable successors, reinforced by purges of dissenting figures. A third term may deepen economic vulnerabilities (inflation peaked at 85% in 2022) and accelerate democratic backsliding. Current polling shows 48% approval (KONDA, Q1 2024). Top scenario: fragmented or disputed outcome (48%). Political risk score: 0.25 (confidence 35%).
+
+الملخص التنفيذي
+تُشير التوقعات إلى أن أردوغان سيخوض الانتخابات الرئاسية التركية لعام 2028، وهو مؤهل دستوريًا بموجب تعديلات 2017 التي تسمح بولايتين خمسيتين. تشمل المؤشرات انتخابه عام 2023 (52.2% من الأصوات) وغياب خلفاء قابلين للتطبيق في حزب العدالة والتنمية، مع تعزيز مكانته عبر عمليات التطهير الداخلي للمعارضة. قد تؤدي الولاية الثالثة إلى تفاقم الضعف الاقتصادي (بلغ التضخم ذروته عند 85% في 2022) وتسريع التراجع الديمقراطي. تُظهر استطلاعات الرأي الحالية 48% موافقة (كوندا، الربع الأول 2024). السيناريو الأبرز: نتيجة مُتَشَظِّية أو مُنازع عليها (48%). درجة المخاطر السياسية: 0.25 (ثقة 35%).
+
+Research Findings
+Erdogan's eligibility stems from constitutional amendments (Turkish Constitution, Article 101). His 2023 victory and AKP's internal purges of dissenters reinforce his position. Economic vulnerabilities include 85% inflation (2022) and unorthodox policies. Democratic backsliding is linked to judicial reforms. Opposition coalition dynamics and constitutional challenges to term limits remain key uncertainties. Think tank analyses showed low relevance to the scenario (average relevance score: 0.175).
+
+النتائج البحثية
+ينبع أهلية أردوغان من التعديلات الدستورية (المادة 101 من الدستور التركي). يُعزز انتخابه عام 2023 وعمليات التطهير الداخلي لحزب العدالة والتنمية مكانته. تشمل الضعفات الاقتصادية تضخمًا بنسبة 85% (2022) وسياسات غير تقليدية. يرتبط التراجع الديمقراطي بإصلاحات قضائية. تظل ديناميكيات تحالف المعارضة والتحديات الدستورية لحدّ الولاة غير مؤكدة. أظهرت تحليلات مراكز الأبحاث صلة منخفضة بالسيناريو (متوسط درجة الصلة: 0.175).
+
+Evidence Assessment
+No research snippets were provided. No trusted sources matched the walled garden query. Evidence is limited, with think tank reports showing low relevance (average 0.175) to the scenario. Context sentiment is neutral with 35% confidence.
+
+تقييم الأدلة
+لم تُقدَّم أي مقتطفات بحثية. لم تتطابق أي مصادر موثوقة مع استعلام الحديقة المغلقة. الأدلة محدودة، مع ظهور تقارير مراكز الأبحاث صلة منخفضة بالسيناريو (متوسط 0.175). يظل المزاج السياقي محايدًا بثقة 35%.
+
+Risks & Scenarios
+Top scenario: fragmented or disputed election outcome (48% probability). Economic risks include short-term Turkish lira (TRY) and BIST 100 volatility, with potential capital
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Chatham House, Brookings Institution, Council on Foreign Relations, Peterson Institute, Arab Gulf States Institute, RAND Corporation, Gulf Research Center, Carnegie Endowment

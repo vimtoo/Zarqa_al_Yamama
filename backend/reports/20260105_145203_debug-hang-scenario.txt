@@ -1,0 +1,35 @@
+INTELLIGENCE BRIEF
+==================
+Subject: Debug Hang Scenario
+Date: 2026-01-05
+Classification: UNCLASSIFIED
+
+EXECUTIVE SUMMARY
+الملخص التنفيذي
+------------------
+-   **70% probability** of memory leak causing hang (15.55% forecast value).
+-   Primary driver is the top-scenario designation; **no supporting evidence** provided.
+-   **Critical unknown**: Evidence gap undermines confidence; risk of misdiagnosing root cause.
+-   **Immediately prioritize memory leak investigation** despite evidence gap; allocate resources to validate.
+-   **Watch for**: Memory usage spikes, crash logs, or performance degradation in next 24h.
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+RESEARCH FINDINGS
+نتائج البحث
+-----------------
+Gathered 0 verified facts. Depth: 4
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+RECOMMENDATIONS
+التوصيات
+--------------
+Monitor Market Analysis indicators and political signals. Update the assessment as new evidence emerges.
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+## Appendix A: Quantitative Indicators
+## Appendix B: Primary Source Data
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.

@@ -1,0 +1,31 @@
+{
+  "scenario_id": "GS-004",
+  "name": "Grain Deal Collapse",
+  "input_text": "Suspension of Black Sea Grain Initiative affecting wheat futures.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "macroeconomics",
+        "geopolitics"
+      ],
+      "must_activate_agents": [
+        "temporal_analyst",
+        "political_studies_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_III"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 2,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "food security"
+      ],
+      "must_not_contain": []
+    }
+  }
+}

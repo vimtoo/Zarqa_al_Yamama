@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scenario_02_unknown_or_halt",
+  "timestamp": "2025-12-25T19:37:23.836818",
+  "termination_reason": "TERMINATE_GOVERNOR_HALT",
+  "max_depth": 3,
+  "recursion_stats": {
+    "depth": 1,
+    "queries": 1
+  },
+  "governor_halt_present": true
+}

@@ -1,0 +1,74 @@
+FORECAST REPORT
+---------------
+Scenario: Oil prices during 2026
+Generated (UTC): 2025-12-22T11:30:01.575058
+Request ID: req_20251222_142600_9e547fc6
+
+Executive Summary
+Oil prices during 2026 are forecast to decrease to 85.51 (current: 87.62) with 86% confidence. Context sentiment is neutral. The top scenario is supply easing (48% probability). Political risk score is 0.25 (35% confidence). Recommendation: Monitor for Market Analysis.
+
+ملخص تنفيذي
+تُشير التوقعات إلى انخفاض أسعار النفط خلال عام 2026 إلى 85.51 (الحالية: 87.62) بثقة 86%. يُعتبر المشهد السياقي محايدًا. السيناريو الرئيسي هو تخفيف العرض (باحتمال 48%). درجة المخاطر السياسية 0.25 (بثقة 35%). التوصية: مراقبة تحليل السوق.
+
+Research Findings
+The 30-day forecast projects oil prices at 85.51 (86% confidence), with a 90-day forecast of 82.53. Key drivers include historical price trends, volatility index, technical indicators (RSI: 39.98), and market momentum. The Random Forest Ensemble model used 252 data points from Polygon.io. LLM insights indicate bearish momentum due to OPEC+ production exceeding quotas by 3% and softening demand from China's Q2 2026 industrial output slowdown.
+
+النتائج البحثية
+تُشير التوقعات لـ30 يومًا إلى أسعار نفط تبلغ 85.51 (بثقة 86%)، وتوقعات 90 يومًا عند 82.53. العوامل الرئيسية تشمل الاتجاهات السعرية التاريخية، ومؤشر التقلبات، والمؤشرات الفنية (RSI: 39.98)، وقوة السوق. استخدم نموذج Random Forest Ensemble 252 نقطة بيانات من Polygon.io. تشير رؤى نماذج الذكاء الاصطناعي إلى زخم هابط بسبب تجاوز إنتاج أوبك+ للحصص بنسبة 3% وضعف الطلب من تباطؤ الإنتاج الصناعي في الصين للربع الثاني 2026.
+
+Evidence Assessment
+Context sentiment score is neutral (0.0) with low confidence (30%). Political risk score is 0.25. No trusted sources matched the walled garden query. Weak signals include one bias flag related to misalignment between temporal drivers and context themes, and policy insights from 8 think tank reports (Brookings, RAND, Chatham House).
+
+تقييم الأدلة
+درجة المشهد السياقي محايدة (0.0) بثقة منخفضة (30%). درجة المخاطر السياسية 0.25. لم تتطابق أي مصادر موثوقة مع استعلام الحديقة المغلقة. الإشارات الضعيفة تشمل علامة تحيز واحدة تتعلق بعدم توافق العوامل الزمنية مع السياقات، ورؤى سياسية من 8 تقارير لمعاهد أبحاث (بروكينغز، راند، تشاثام هاوس).
+
+Forecast Outlook
+Base forecast is 85.51 (86% confidence). Prices may decline 2.4% to $85.51 (±$1.20 range) in 30 days, testing support at $85.48. A breakdown below $85.00 could accelerate to $82.50. Supply easing is the most probable scenario (48%), followed by baseline supply (34%) and supply tightening (18%).
+
+النظرة التوقعية
+التوقع الأساسي 85.51 (بثقة 86%). قد تنخفض الأسعار بنسبة 2.4% إلى 85.51 دولار (±1.20 دولار) خلال 30 يومًا، مع اختبار الدعم عند 85.48 دولار. الانخفاض دون 85.00 دولار قد يسرع اله
+
+PREDICTION INDICATORS
+مؤشرات التنبؤ
+----------------------
+Metric: Oil prices during 2026
+Trend direction: bearish
+Current value: 87.62184726694548
+Forecast 30d: 85.51462007040269
+Forecast 90d: 82.53117440119043
+Confidence 30d: 0.8595089281645709
+Confidence 90d: 0.7095089281645709
+Model type: Random Forest Ensemble
+Data points: 252
+Volatility: 0.028098214367085827
+Drivers: Historical Price Trend; Volatility Index; Technical Indicators (RSI, MACD); Market Momentum
+Final forecast: 85.51462007040269
+Final confidence: 0.8595089281645709
+Sentiment adjustment: 0.0
+Risk weight: 0.27
+Volatility factor: 0.9262499999999999
+Adjustment rationale: Neutral adjustment (+0.00%) applied. Sentiment context has minimal impact on forecast. Risk weight: 0.27, Volatility factor: 0.93
+Context sentiment: 0.0
+Narrative momentum: stable
+Mentions (24h): 100
+Political risk score: 0.25
+Political risk confidence: 0.35
+Top scenario: Supply easing (48%)
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Brookings Institution, Chatham House, Carnegie Endowment, RAND Corporation

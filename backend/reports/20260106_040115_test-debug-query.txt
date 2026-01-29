@@ -1,0 +1,113 @@
+INTELLIGENCE BRIEF
+==================
+Subject: Test Debug Query
+Date: 2026-01-06
+Classification: UNCLASSIFIED
+
+### English Brief  
+
+**1. Executive Summary**  
+• Decision: Validate scenario assumptions and implement political risk mitigation immediately.  
+• 70% confidence in forecast value of 140 under top scenario (syntax error handling).  
+• 25% political risk exposure; scenario unverified due to evidence gap.  
+
+**2. Situation Assessment**  
+*Facts:*  
+- Scenario is "Test Debug Query" and non-market (scenario_is_market: false) [Data, 2026].  
+- Zero verified news items, GDELT events, ACLED events, or legislative updates related to the scenario [Political Insights, 2026].  
+- Context sentiment shows 900 mentions in 24h, neutral sentiment score (0.0), and stable narrative momentum [Context Sentiment, 2026].  
+- Political risk score is 0.25, with neutral/low-impact policy effects across governance, security, and economy [Policy Impact, 2026].  
+- Two scenarios each assigned 33% probability: "Syntax Error Handling" and "Data Source Failure Simulation" [Scenario Probabilities, 2026].  
+- Zero verified facts gathered (walled_garden_answer: "Gathered 0 verified facts. Depth: 4") [Walled Garden Query, 2026].  
+
+*Interpretation:*  
+- The scenario is unverified due to an evidence gap (0 events vs. 900 mentions), indicating artificial/test conditions [Analyst Interpretation].  
+- 25% political risk exposure derives from the 0.25 risk score, reflecting low volatility but unconfirmed real-world relevance [Analyst Interpretation].  
+- Equal scenario probabilities (33% each) with no drivers suggest arbitrary assignment, not evidence-based forecasting [Analyst Interpretation].  
+
+**3. Forecast Analysis**  
+*Scenarios:*  
+- **Syntax Error Handling (33% probability)**: Primary scenario per data; no drivers or evidence provided [Scenario Probabilities, 2026].  
+- **Data Source Failure Simulation (33% probability)**: Secondary scenario; no drivers or evidence provided [Scenario Probabilities, 2026].  
+- *Unaccounted probability (34%)*: Not addressed in data; implies high uncertainty.  
+
+*Drivers:*  
+- None identified; scenario probabilities lack causal evidence [Scenario Probabilities, 2026].  
+
+*Constraints:*  
+- Evidence gap: Zero verified facts and contradictory data (900 mentions vs. 0 events) [Walled Garden Query, 2026; Political Insights, 2026].  
+- Artificial scenario design: "Test Debug Query" label confirms non-operational context [Data, 2026].  
+
+**4. Key Risks & Uncertainties**  
+*Known Unknowns:*  
+- Cause of discrepancy between 900 mentions (context sentiment) and 0 events (political insights) [Context Sentiment vs. Political Insights, 2026].  
+- Definition and relevance of "140 forecast value" [Data, 2026].  
+- Why scenario probabilities are split equally without drivers [Scenario Probabilities, 2026].  
+
+*Falsification Criteria:*  
+- **Invalidation if**: Evidence confirms real-world event (e.g., ≥1 verified news item or GDELT event) [Walled Garden Query, 2026].  
+- **Invalidation if**: Political risk score exceeds 0.5, contradicting 25% exposure claim [Policy Impact, 2026].  
+
+**5. Strategic Implications**  
+- Monitor for evidence emergence (news, events) to validate or falsify the scenario.  
+- Track political stability indicators and policy impact shifts; any rise in risk score >0.5 warrants reassessment.  
+- Prioritize syntax error resolution in data pipelines to address root cause of evidence gap.  
+
+---  
+
+### النص العربي  
+
+**١. ملخص تنفيذي**  
+• القرار: التحقق من افتراضات السيناريو وتنفيذ تخفيف مخاطر سياسية فورًا.  
+• ثقة بنسبة ٧٠٪ في القيمة التنبؤية ١٤٠ تحت السيناريو الرئيسي (معالجة أخطاء بناء الجملة).  
+• تعرض لمخاطر سياسية بنسبة ٢٥٪؛ السيناريو غير مُوثَّق بسبب فجوة الأدلة.  
+
+**٢. تقييم الوضع**  
+*حقائق:*  
+- السيناريو هو "استعلام اختبار تصحيح الأخطاء" وغير سوقي (scenario_is_market: false) [البيانات، ٢٠٢٦].  
+- لا توجد عناصر أخبار مُوثَّقة، أو أحداث GDELT، أو أحداث ACLED، أو تحديثات تشريعية مرتبطة بالسيناريو [الاستخبارات السياسية، ٢٠٢٦].  
+- المشاعر السياقية تُظهر ٩٠٠ ذكر في ٢٤ ساعة، ودرجة مشاعر محايدة (٠.٠)، وحركة سردية مستقرة [المشاعر السياقية، ٢٠٢٦].  
+- درجة المخاطر السياسية ٠.٢٥، مع تأثيرات سياسية محايدة/منخفضة في الحوكمة والأمن والاقتصاد [التأثير السياسي، ٢٠٢٦].  
+- سيناريوهان مُخصَّصان بنسبة ٣٣٪ لكل منهما: "معالجة أخطاء بناء الجملة" و"محاكاة فشل مصدر البيانات" [الاحتمالات السيناريوية، ٢٠٢٦].  
+- لا توجد حقائق مُوثَّقة (الإجابة: "تم جمع ٠ حقائق مُوثَّقة. العمق: ٤") [استعلام الحديقة المغلقة، ٢٠٢٦].  
+
+*تفسير:*  
+- السيناريو غير مُوثَّق بسبب فجوة الأدلة (٠ أحداث مقابل ٩٠٠ ذكر)، مما يشير إلى ظروف اصطناعية/اختبارية [تفسير المحلل].  
+- التعرض لمخاطر سياسية بنسبة ٢٥٪ مشتق من درجة المخاطر ٠.٢٥، مما يعكس تقلبات منخفضة لكن دون صلة واقعية مُثبتة [تفسير المحلل].  
+- الاحتمالات المتساوية (٣٣٪ لكل سيناريو) دون عوامل دافعة تشير إلى تخصيص عشوائي، وليس تنبؤًا مبنيًا على الأدلة [تفسير المحلل].  
+
+**٣. تحليل التنبؤ**  
+*سيناريوهات:*  
+- **معالجة أخطاء بناء الجملة (احتمال ٣٣٪)**: السيناريو الرئيسي وفق البيانات؛ لا توجد عوامل دافعة أو أدلة [الاحتمالات السيناريوية، ٢٠٢٦].  
+- **محاكاة فشل مصدر البيانات (احتمال ٣٣٪)**: السيناريو الثانوي؛ لا توجد عوامل دافعة أو أدلة [الاحتمالات السيناريوية، ٢٠٢٦].  
+- *الاحتمال غير المُعَرَّف (٣٤٪)*: غير مُعالَج في البيانات؛ يشير إلى عدم اليقين العالي.  
+
+*عوامل دافعة:*  
+- لا توجد؛ الاحتمالات السيناريوية تفتقر إلى الأدلة السببية [الاحتمالات السيناريوية، ٢٠٢٦].  
+
+*قيود:*  
+- فجوة الأدلة: لا توجد حقائق مُوثَّقة وبيانات متضاربة (٩٠٠ ذكر مقابل ٠ أحداث) [استعلام الحديقة المغلقة، ٢٠٢٦؛ الاستخبارات السياسية، ٢٠٢٦].  
+- تصميم سيناريو اصطناعي: تسمية "استعلام اختبار تصحيح الأخطاء" تؤكد السياق غير التشغيلي [البيانات، ٢٠٢٦].  
+
+**٤. المخاطر وال uncertainties الرئيسية**  
+*مجهولات معروفة:*  
+- سبب التناقض بين ٩٠٠ ذكر (المشاعر السياقية) و٠ أحداث (الاستخبارات السياسية) [المشاعر السياقية مقابل الاستخبارات السياسية، ٢٠٢٦].  
+- تعريف وملاءمة "القيمة التنبؤية ١٤٠" [البيانات، ٢٠٢٦].  
+- سبب تساوي احتمالات السيناريوهات دون عوامل دافعة [الاحتمالات السيناريوية، ٢٠٢٦].  
+
+*معايير التكذيب:*  
+- **التكذيب إذا**: تأكيد حدث واقعي (مثل وجود ≥ عنصر أخبار مُوثَّق أو حدث GDELT) [استعلام الحديقة المغلقة، ٢٠٢٦].  
+- **التكذيب إذا**: ارتفاع درجة المخاطر السياسية فوق ٠.٥، مما يتناقض مع ادعاء التعرض ٢٥٪ [التأثير السياسي، ٢٠٢٦].  
+
+**٥. الآثار الاستراتيجية**  
+- رصد ظهور أدلة (أخبار، أحداث) للتحقق من السيناريو أو تكذيبه.  
+- متابعة مؤشرات الاستقرار السياسي وتغيرات التأثير السياسي؛ أي ارتفاع في درجة المخاطر >٠.٥ يستدعي إعادة التقييم.  
+- أولوية حل أخطاء بناء الجملة في خطوط البيانات لمعالجة جذر فجوة الأدلة.
+
+## Appendix A: Quantitative Indicators
+## Appendix B: Primary Source Data
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.

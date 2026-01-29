@@ -1,0 +1,32 @@
+{
+  "scenario_id": "GS-007",
+  "name": "Capitol Riot (Jan 6)",
+  "input_text": "Crowd breaches US Capitol building. Security overwhelmed. Casualties reported.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "politics",
+        "security"
+      ],
+      "must_activate_agents": [
+        "political_studies_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_IV"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 2,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "breach"
+      ],
+      "must_not_contain": [
+        "peaceful"
+      ]
+    }
+  }
+}

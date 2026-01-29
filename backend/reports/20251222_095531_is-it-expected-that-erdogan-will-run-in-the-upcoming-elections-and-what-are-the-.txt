@@ -1,0 +1,41 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T09:57:02.285816
+Request ID: req_20251222_124943_6bd63dd8
+
+Executive Summary
+Erdogan is expected to run in Türkiye's 2028 presidential election, constitutionally eligible under the 2017 amendments (Turkish Constitution, Article 101). Indications include his 2023 re-election victory (52.2% of votes per Supreme Election Council data) and the AKP's lack of viable successors. A third term would likely deepen economic vulnerabilities (inflation peaked at 85% in 2022, TurkStat) and accelerate democratic backsliding. Current approval is 48% (KONDA, Q1 2024), with fragmented or disputed election outcomes most probable (48%). Political risk score: 0.25 (confidence 35%). Recommendation: Monitor Market Analysis.
+
+الملخص التنفيذي
+من المتوقع أن يخوض أردوغان الانتخابات الرئاسية التركية لعام 2028، وهو مؤهل دستوريًا بموجب التعديلات لعام 2017 (المادة 101 من الدستور التركي). تشمل المؤشرات فوزه في انتخابات 2023 (52.2% من الأصوات وفقًا لبيانات المجلس الأعلى للانتخابات) وغياب خلفاء قابلين للتطبيق في حزب العدالة والتنمية. من المرجح أن يؤدي الولاية الثالثة إلى تفاقم الضعف الاقتصادي (بلغت ذروة التضخم 85% في 2022 وفقًا لـ TurkStat) وتسريع التراجع الديمقراطي. تبلغ الموافقة الحالية 48% (KONDA، الربع الأول 2024)، مع احتمال الأعلى لنتيجة انتخابية مُشَتَّتة أو مُنازع عليها (48%). درجة المخاطر السياسية: 0.25 (ثقة 35%). التوصية: مراقبة تحليل السوق.
+
+Research Findings
+Key findings indicate Erdogan's constitutional eligibility for a third term, supported by the 2017 amendments. His 2023 re-election with 52.2% of votes and the AKP's consolidation of power through purges of dissenting figures are key indicators. Economic vulnerabilities persist, with inflation reaching 85% in 2022. Current approval stands at 48%, and the most likely scenario is a fragmented or disputed election outcome (48% probability). The political risk score is 0.25, indicating low volatility.
+
+النتائج البحثية
+تشير النتائج الرئيسية إلى أهلية أردوغان الدستورية لولاية ثالثة، مدعومة بالتعديلات لعام 2017. يُعد فوزه في انتخابات 2023 بنسبة 52.2% من الأصوات وتوحيد حزب العدالة والتنمية لسلطته عبر إقصاء المعارضين مؤشرات رئيسية. يستمر الضعف الاقتصادي مع وصول التضخم إلى 85% في 2022. تبلغ الموافقة الحالية 48%، وأرجح سيناريو هو نتيجة انتخابية مُشَتَّتة أو مُنازع عليها (48% احتمال). درجة المخاطر السياسية 0.25، مما يشير إلى تقلبات منخفضة.
+
+Evidence Assessment
+No research snippets are available for citation. Context sentiment is neutral (sentiment score 0.0) with 100 mentions in 24 hours. Think tank analysis of 12 reports shows low relevance (average 0.175), with the Council on Foreign Relations' report on trade tensions being most relevant. No trusted sources matched the walled garden query. Weak signals include one bias flag and policy intelligence from think tanks.
+
+تقييم الأدلة
+لا توجد مقتطفات بحثية متاحة للاستشهاد بها. يظل المزاج السياقي محايدًا (درجة المزاج 0.0) مع
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Chatham House, Brookings Institution, Council on Foreign Relations, Peterson Institute, Arab Gulf States Institute, RAND Corporation, Gulf Research Center, Carnegie Endowment

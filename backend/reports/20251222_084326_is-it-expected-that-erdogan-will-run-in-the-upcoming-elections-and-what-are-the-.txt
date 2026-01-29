@@ -1,0 +1,53 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T08:44:50.113009
+Request ID: req_20251222_114259_d565c890
+
+Executive Summary
+Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run? The forecast shows a decrease to 670.90 (current: 680.59) with 95% confidence. Context sentiment is neutral. Recommendation: Monitor for Market Analysis. Political risk: 0.25 (conf 60%). Top scenario: Fragmented or disputed outcome (48%).
+
+ملخص تنفيذي
+هل من المتوقع أن يترشح أردوغان في الانتخابات المقبلة، وما هي المؤشرات على ذلك، وما الأثر الذي سيتركه على تركيا إذا ترشح؟ يتوقع التوقعات انخفاضًا إلى 670.90 (الحالي: 680.59) مع ثقة 95٪. مشاعر السياق متعادلة. التوصية: رصد تحليل السوق. المخاطر السياسية: 0.25 (ثقة 60٪). السيناريو الأعلى: نتيجة مجزأة أو متنازع عليها (48٪).
+
+Research Findings
+Turkish President Recep Tayyip Erdogan is widely expected to run in the upcoming elections, despite facing significant political and economic challenges. Erdogan's decision to run would likely have a major impact on Türkiye's future trajectory, given his dominant role in shaping the country's policies over the past two decades. The elections will be closely watched by both domestic and international observers, as they could potentially reshape Türkiye's political landscape. Key actors include Erdogan, the Turkish government, opposition parties, and Turkish voters. Topics of interest are Erdogan's political future, Turkish domestic politics, economic challenges, and governance reforms.
+
+نتائج البحث
+من المتوقع على نطاق واسع أن يترشح الرئيس التركي رجب طيب أردوغان في الانتخابات المقبلة، على الرغم من مواجهة تحديات سياسية واقتصادية كبيرة. من المرجح أن يؤثر قرار أردوغان بالترشح بشكل كبير على المسار المستقبلي لتركيا، بالنظر إلى دوره المهيمن في تشكيل سياسات البلاد على مدى العقدين الماضيين. ستكون الانتخابات تحت مراقبة متابعة من المراقبين المحليين والدوليين، حيث قد تعيد تشكيل المشهد السياسي التركي. تشمل الأطراف الرئيسية أردوغان والحكومة التركية والأحزاب المعارضة والناخبين الأتراك. مواضيع الاهتمام هي مستقبل أردوغان السياسي والسياسة التركية الداخلية والتحديات الاقتصادية وإصلاحات الحوكمة.
+
+Evidence Assessment
+The evidence assessment is missing from the provided data.
+
+تقييم الأدلة
+تقييم الأدلة مفقود من البيانات المقدمة.
+
+Risks & Scenarios
+The top scenario is a fragmented or disputed outcome with a 48% probability, driven by Erdogan's political future, Turkish domestic politics, and economic challenges. Other scenarios include the incumbent advantage holding (18% probability) and the opposition gaining ground (34% probability). The political risk score is 0.25, implying low volatility.
+
+المخاطر والسيناريوهات
+السيناريو الأعلى هو نتيجة مجزأة أو متنازع عليها مع احتمالية 48٪، مدفوعًا بمستقبل أردوغان السياسي والسياسة التركية الداخلية والتحديات الاقتصادية. تشمل السيناريوهات الأخرى بقاء ميزة الحالي (احتمال 18٪) وكتساب المعارضة أرضية (احتمال 34٪). درجة المخاطر السياسية هي 0.25، مما يعني انخفاض التقلب.
+
+Recommendations
+Maintain current positions. High conviction based on 95% confidence. Monitor Market Analysis. Policy impacts show neutral pressure across security, economy, governance. Risk score at 0.25 implies low volatility.
+
+التوصيات
+الحفاظ على المواقف الحالية. قناعة عالية بناءً على ثقة 95٪. رصد تحليل السوق. تظهر تأثيرات السياسات ضغطًا محايدًا عبر الأمن والاقتصاد والحوكمة. درجة المخاطر عند
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Arab Gulf States Institute, Council on Foreign Relations, Gulf Research Center, Peterson Institute, Carnegie Endowment, Chatham House, Brookings Institution, RAND Corporation

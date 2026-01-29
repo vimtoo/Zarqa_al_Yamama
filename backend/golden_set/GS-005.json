@@ -1,0 +1,30 @@
+{
+  "scenario_id": "GS-005",
+  "name": "Currency Devaluation (Lira)",
+  "input_text": "Rapid devaluation of Turkish Lira causing import inflation.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "finance",
+        "macroeconomics"
+      ],
+      "must_activate_agents": [
+        "temporal_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_II"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 1,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "hyperinflation"
+      ],
+      "must_not_contain": []
+    }
+  }
+}

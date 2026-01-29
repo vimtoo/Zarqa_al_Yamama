@@ -1,0 +1,30 @@
+{
+  "scenario_id": "GS-009",
+  "name": "Iran Mahsa Amini Protests",
+  "input_text": "Nationwide protests in Iran following death in custody. Internet blackout.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "politics",
+        "security"
+      ],
+      "must_activate_agents": [
+        "political_studies_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_IV"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 3,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "crackdown"
+      ],
+      "must_not_contain": []
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scenario": "What is the specific target for renewable energy in Kuwait's Vision 2035 and cite the source date?",
+  "items": [
+    {
+      "source_url": "url",
+      "content_snippet": "fact",
+      "published_date": null,
+      "confidence_score": 0.7,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 0,
+      "context_tags": [],
+      "source_domain": null
+    },
+    {
+      "source_url": "url",
+      "content_snippet": "fact",
+      "published_date": null,
+      "confidence_score": 0.7,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 1,
+      "context_tags": [],
+      "source_domain": null
+    },
+    {
+      "source_url": "url",
+      "content_snippet": "fact",
+      "published_date": null,
+      "confidence_score": 0.7,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 2,
+      "context_tags": [],
+      "source_domain": null
+    },
+    {
+      "source_url": "url",
+      "content_snippet": "fact",
+      "published_date": null,
+      "confidence_score": 0.7,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 3,
+      "context_tags": [],
+      "source_domain": null
+    }
+  ],
+  "missing_information": [
+    "none"
+  ],
+  "contradictions": [],
+  "recursion_stats": {
+    "depth": 4,
+    "queries": 4
+  },
+  "governor_halt_report": null
+}

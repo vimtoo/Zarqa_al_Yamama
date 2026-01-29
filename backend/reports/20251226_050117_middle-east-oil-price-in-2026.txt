@@ -1,0 +1,113 @@
+INTELLIGENCE BRIEF
+==================
+Subject: Middle East Oil Price in 2026
+Date: 2025-12-26
+Classification: UNCLASSIFIED
+
+**ENGLISH BRIEF**  
+
+**1. Executive Summary**  
+- Decision: 75% probability of Middle East oil prices collapsing to $0/bbl in 2026.  
+- Probability: 75% (low confidence due to model inconsistency with scenario probabilities).  
+- Confidence: Low (0.6) – model contradicts quantified scenario data showing "Supply easing" as most probable (51.2%).  
+
+**2. Situation Assessment**  
+*Facts:*  
+- Current Brent volatility: +5–8% short-term due to Venezuela blockade, partially offset by Saudi supply increase [NewsData.io, 2025].  
+- Kuwait’s fiscal planning assumes Brent range of $75–90/bbl for Q1 2026 [GDELT 2.0, 2025].  
+- OPEC+ production cuts exceeding 3M bpd and EV adoption >50% are key signposts for price collapse [LLM Analysis, 2025].  
+- Scenario probabilities: "Supply easing" (51.2%), "Baseline supply" (34.0%), "Supply tightening" (14.8%) [Context Sentiment, 2025].  
+
+*Interpretation:*  
+- The 75% collapse probability is derived from top scenario modeling but conflicts with quantified scenario data where "Supply tightening" (the collapse driver) has only 14.8% probability.  
+- Low political risk score (0.25) and neutral policy impact suggest stable near-term conditions, contradicting the collapse narrative [Policy Impact, 2025].  
+
+**3. Forecast Analysis**  
+*Scenarios:*  
+- **Supply easing (51.2%):** Brent $75–90/bbl; driven by OPEC+ cohesion and stable demand [Scenario Probabilities, 2025].  
+- **Baseline supply (34.0%):** Brent ~$85/bbl; moderate demand growth offset by incremental supply [Scenario Probabilities, 2025].  
+- **Supply tightening (14.8%):** Brent collapse to $0/bbl; requires sustained cuts >3M bpd and demand destruction [Executive Summary, 2025].  
+
+*Drivers:*  
+- OPEC+ compliance (e.g., Saudi spare capacity utilization) [Walled Garden Query, 2025].  
+- China-India demand acceleration and EV adoption rates [Context Sentiment, 2025].  
+
+*Constraints:*  
+- Model validity is unverified (0 facts gathered in walled garden query) [Walled Garden Answer, 2025].  
+- Weak signal: "Scenario tilt" toward supply easing (51.2%) reduces collapse plausibility [Weak Signals, 2025].  
+
+**4. Key Risks & Uncertainties**  
+*Known Unknowns:*  
+- OPEC+ internal compliance data (Saudi spare capacity, Iraq-KRG disputes) [Walled Garden Query, 2025].  
+- Actual EV adoption rates and global recession triggers [Executive Summary, 2025].  
+
+*Falsification Criteria:*  
+- Collapse scenario invalidated if:  
+  (a) OPEC+ cuts remain <3M bpd,  
+  (b) EV adoption <50% by 2026, or  
+  (c) Brent stays >$70/bbl in Q1 2026 [Executive Summary, 2025].  
+- Model bias confirmed by weak signal: "Weak alignment between temporal drivers and context themes" [Weak Signals, 2025].  
+
+**5. Strategic Implications**  
+- Monitor OPEC+ production data (especially Saudi Arabia and Iraq) and EV adoption metrics.  
+- Track Kuwait’s fiscal adjustments as a leading indicator for regional stability.  
+- Prioritize verification of walled garden query on OPEC+ compliance; absence of evidence undermines collapse thesis.  
+- Reassess if Brent exceeds $90/bbl in Q1 2026, indicating demand resilience.  
+
+---  
+
+**الملخص التنفيذي**  
+- القرار: 75% احتمال انهيار أسعار النفط في الشرق الأوسط إلى 0 دولار/برميل بحلول 2026.  
+- الاحتمال: 75% (ثقة منخفضة بسبب تناقض النموذج مع البيانات الكمية).  
+- الثقة: منخفضة (0.6) – النموذج يتناقض مع احتمالية السيناريو الكمية التي تُظهر "تخفيف العرض" كأرجح سيناريو (51.2%).  
+
+**2. تقييم الوضع**  
+*حقائق:*  
+- تقلبات برنت الحالية: +5–8% قصيرة المدى بسبب الحصار الفنزويلي، مع تعويض جزئي من زيادة الإنتاج السعودي [NewsData.io, 2025].  
+- تخطيط الكويت المالي يفترض نطاق برنت بين 75–90 دولار/برميل للربع الأول 2026 [GDELT 2.0, 2025].  
+- خفض إنتاج أوبك+ بأكثر من 3 ملايين برميل/يوم واعتماد المركبات الكهربائية بأكثر من 50% هما مؤشران رئيسيان لانهيار السعر [LLM Analysis, 2025].  
+- احتمالات السيناريوهات: "تخفيف العرض" (51.2%)، "العرض الأساسي" (34.0%)، "تشديد العرض" (14.8%) [Context Sentiment, 2025].  
+
+*تفسير:*  
+- احتمال الانهيار 75% مشتق من نمذجة السيناريوهات لكنه يتناقض مع البيانات الكمية حيث يبلغ احتمال "تشديد العرض" (المحرك الرئيسي للانهيار) 14.8% فقط.  
+- درجة المخاطر السياسية المنخفضة (0.25) والتأثير السياسي المحايد تشير إلى استقرار الظروف قصيرة المدى، مما يتناقض مع سيناريو الانهيار [Policy Impact, 2025].  
+
+**3. تحليل التوقعات**  
+*سيناريوهات:*  
+- **تخفيف العرض (51.2%):** برنت 75–90 دولار/برميل؛ مدفوع بتماسك أوبك+ وثبات الطلب [Scenario Probabilities, 2025].  
+- **العرض الأساسي (34.0%):** برنت ~85 دولار/برميل؛ نمو طلب معتدل يوازن الزيادة التدريجية للعرض [Scenario Probabilities, 2025].  
+- **تشديد العرض (14.8%):** انهيار برنت إلى 0 دولار/برميل؛ يتطلب خفضًا مستمرًا >3 ملايين برميل/يوم وتدمير الطلب [Executive Summary, 2025].  
+
+*العوامل المحركة:*  
+- الالتزام الداخلي لأوبك+ (مثل استخدام الطاقة الاحتياطية السعودية) [Walled Garden Query, 2025].  
+- تسارع الطلب من الصين والهند ومعدلات اعتماد المركبات الكهربائية [Context Sentiment, 2025].  
+
+*القيود:*  
+- صحة النموذج غير مُثبتة (0 حقائق مُجمعة في الاستعلام المغلق) [Walled Garden Answer, 2025].  
+- إشارة ضعيفة: "انحياز السيناريو" نحو تخفيف العرض (51.2%) يقلل مصداقية الانهيار [Weak Signals, 2025].  
+
+**4. المخاطر الرئيسية والغموض**  
+*المجهول المعروف:*  
+- بيانات الالتزام الداخلي لأوبك+ (الطاقة الاحتياطية السعودية، نزاعات كركوك بين العراق وإقليم كردستان) [Walled Garden Query, 2025].  
+- معدلات اعتماد المركبات الكهربائية الفعلية ومحفزات الركود العالمي [Executive Summary, 2025].  
+
+*معايير التكذيب:*  
+- يُلغى سيناريو الانهيار إذا:  
+  (أ) بقي خفض أوبك+ <3 ملايين برميل/يوم،  
+  (ب) اعتماد المركبات الكهربائية <50% بحلول 2026، أو  
+  (ج) بقي برنت >70 دولار/برميل في الربع الأول 2026 [Executive Summary, 2025].  
+- تأكيد التحيز في النموذج عبر الإشارة الضعيفة: "انفصال ضعيف بين العوامل الزمنية والمواضيع السياقية" [Weak Signals, 2025].  
+
+**5. الآثار الاستراتيجية**  
+- راقب بيانات إنتاج أوبك+ (خاصة السعودية والعراق) ومعدلات اعتماد المركبات الكهربائية.  
+- تابع تعديلات الميزانية الكويتية كمؤشر رائد للاستقرار الإقليمي.  
+- أولوية التحقق من استعلام "الحديقة المغلقة" حول التزام أوبك+؛ غياب الأدلة يُضعف فرضية الانهيار.  
+- أعد التقييم إذا تجاوز برنت 90 دولار/برميل في الربع الأول 2026، مما يشير إلى مرونة الطلب.
+
+## Appendix A: Quantitative Indicators
+## Appendix B: Primary Source Data
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.

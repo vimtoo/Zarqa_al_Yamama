@@ -1,0 +1,47 @@
+{
+  "scenario": "What is the specific target for renewable energy in Kuwait's Vision 2035 and cite the source date?",
+  "items": [
+    {
+      "source_url": "http://kuwaitpolitics.org/vision",
+      "content_snippet": "fact1",
+      "published_date": null,
+      "confidence_score": 0.8,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 0,
+      "context_tags": [],
+      "source_domain": null
+    },
+    {
+      "source_url": "http://kna.kw/energy-targets",
+      "content_snippet": "fact2",
+      "published_date": null,
+      "confidence_score": 0.9,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 1,
+      "context_tags": [],
+      "source_domain": null
+    },
+    {
+      "source_url": "http://bellingcat.com/verification",
+      "content_snippet": "fact3",
+      "published_date": null,
+      "confidence_score": 0.95,
+      "id": null,
+      "analyst_id": "walled_garden",
+      "recursion_depth": 1,
+      "context_tags": [],
+      "source_domain": null
+    }
+  ],
+  "missing_information": [
+    "none"
+  ],
+  "contradictions": [],
+  "recursion_stats": {
+    "depth": 2,
+    "queries": 2
+  },
+  "governor_halt_report": null
+}

@@ -1,0 +1,41 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T08:45:30.167728
+Request ID: req_20251222_114259_d565c890
+
+**Executive Summary**
+Based on the provided data, it is widely expected that Turkish President Recep Tayyip Erdogan will run in the upcoming elections [1]. His candidacy is anticipated to have a major impact on Türkiye's future trajectory. The forecast indicates a decrease to 670.90 (from a current 680.59) with 95% confidence. The top scenario is a fragmented or disputed election outcome (48% probability). Political risk is assessed at 0.25 (60% confidence), implying low volatility. Policy impacts are neutral across security, economy, and governance. The recommendation is to maintain current positions and monitor market analysis.
+
+**ملخص تنفيذي**
+بناءً على البيانات المقدمة، من المتوقع على نطاق واسع أن يترشح الرئيس التركي رجب طيب أردوغان في الانتخابات القادمة [1]. ومن المتوقع أن يكون لترشحه تأثير كبير على المسار المستقبلي لتركيا. يشير التوقع إلى انخفاض إلى 670.90 (من 680.59 حاليًا) بثقة 95%. السيناريو الرئيسي هو نتيجة انتخابية مجزأة أو متنازع عليها (احتمال 48%). تم تقييم المخاطر السياسية عند 0.25 (ثقة 60%)، مما يشير إلى تقلب منخفض. تأثيرات السياسة محايدة عبر الأمن والاقتصاد والحوكمة. التوصية هي الحفاظ على المراكز الحالية ومراقبة تحليل السوق.
+
+**Research Findings**
+The data indicates Erdogan is widely expected to run, facing significant political and economic challenges [1]. The election outcome is uncertain, with the highest probability (48%) for a fragmented or disputed result. Other scenarios include opposition gains (34%) and incumbent advantage holding (18%). Context sentiment is neutral (score 0.0) with stable narrative momentum. Key actors include Erdogan, the Turkish government, opposition parties, and voters [1]. Think tank analysis of 12 reports shows a focus on economics and geopolitics, but direct relevance to the Turkish election scenario is low (average relevance 0.175). No specific evidence snippets or trusted source matches were found for the election query.
+
+**نتائج البحث**
+تشير البيانات إلى أن أردوغان من المتوقع على نطاق واسع أن يترشح، وهو يواجه تحديات سياسية واقتصادية كبيرة [1]. نتيجة الانتخابات غير مؤكدة، مع أعلى احتمال (48%) لنتيجة مجزأة أو متنازع عليها. تشمل السيناريوهات الأخرى تقدم المعارضة (34%) واستمرار ميزة الرئيس الحالي (18%). معنويات السياق محايدة (درجة 0.0) مع زخم سردي مستقر. الجهات الفاعلة الرئيسية تشمل أردوغان، الحكومة التركية، أحزاب المعارضة، والناخبين [1]. يُظهر تحليل مراكز الفكر لـ 12 تقريرًا تركيزًا على الاقتصاد والجيو سياسية، لكن الصلة المباشرة بسيناريو الانتخابات التركية منخفضة (متوسط الصلة 0.175). لم يتم العثور على مقاطع أدلة محددة أو تطابقات مع مصادر موثوقة لاستعلام الانتخابات.
+
+**Evidence Assessment**
+Direct evidence regarding specific indications of Erdogan's candidacy or its detailed impact is missing from the provided data. The political insights narrative states the expectation and potential major impact but lacks supporting citations or specific indicators [1]. The think tank insights provided are not directly relevant to the Turkish election scenario. The research_snippets array is empty. A query of trusted sources returned no matches. Therefore, the assessment relies on a general narrative [1] without specific evidentiary support. Confidence in the political insights is not quantified in the data.
+
+**تقييم الأدلة**
+الأدلة المباشرة بشأن مؤشرات محددة على ترشح أردوغان أو تأثيره التفصيلي مفقودة من البيانات المقدمة. يذكر سرد الرؤى السياسية التوقع والتأثير المحتمل الكبير لكنه يفتقر إلى الاستش
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Arab Gulf States Institute, Council on Foreign Relations, Gulf Research Center, Peterson Institute, Carnegie Endowment, Chatham House, Brookings Institution, RAND Corporation

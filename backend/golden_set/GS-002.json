@@ -1,0 +1,30 @@
+{
+  "scenario_id": "GS-002",
+  "name": "Oil Price Spike (2022)",
+  "input_text": "Impact of crude oil prices hitting $120/barrel due to sanctions speculation.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "finance",
+        "energy"
+      ],
+      "must_activate_agents": [
+        "temporal_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_II"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 2,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "inflation"
+      ],
+      "must_not_contain": []
+    }
+  }
+}

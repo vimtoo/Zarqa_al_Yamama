@@ -1,0 +1,29 @@
+{
+  "scenario_id": "GS-014",
+  "name": "Ghost of Kyiv",
+  "input_text": "Viral social media posts claim ace pilot shot down 6 jets.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "security"
+      ],
+      "must_activate_agents": [],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_III"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 3,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "unconfirmed"
+      ],
+      "must_not_contain": [
+        "verified"
+      ]
+    }
+  }
+}

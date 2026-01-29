@@ -1,0 +1,74 @@
+FORECAST REPORT
+---------------
+Scenario: Oil prices during 2026
+Generated (UTC): 2025-12-22T11:29:12.196027
+Request ID: req_20251222_142600_9e547fc6
+
+**Executive Summary**
+Oil prices in 2026 are forecast to decrease to 85.51 from a current value of 87.62, with 86% confidence. The trend is bearish, and the top scenario is supply easing (48% probability). Political risk is low at 0.25. The recommendation is to maintain current positions and monitor market analysis [1].
+
+**الملخص التنفيذي**
+من المتوقع أن تنخفض أسعار النفط في عام 2026 إلى 85.51 من القيمة الحالية البالغة 87.62، مع ثقة بنسبة 86٪. الاتجاه هابط، وأعلى سيناريو هو تخفيف المعروض (احتمال 48٪). المخاطر السياسية منخفضة عند 0.25. التوصية هي الحفاظ على المراكز الحالية ومراقبة تحليل السوق [1].
+
+**Research Findings**
+The forecast indicates a bearish trend for oil prices in 2026, driven by historical price trends, volatility, technical indicators, and market momentum [1]. Bearish momentum is supported by an RSI of 39.98, rejection at a recent high of $94.02, and moderate volatility of 2.8%. Global demand is softening due to China's industrial output slowdown, and OPEC+ production is exceeding quotas by 3% [1]. Context sentiment is neutral with stable narrative momentum [1]. Policy impacts are neutral across security, finance, and economy domains [1].
+
+**نتائج البحث**
+يشير التوقع إلى اتجاه هابط لأسعار النفط في عام 2026، مدفوعًا بالاتجاهات السعرية التاريخية والتقلب والمؤشرات الفنية وزخم السوق [1]. يدعم الزخم الهابط مؤشر RSI عند 39.98، والرفض عند أعلى مستوى حديث عند 94.02 دولارًا، وتقلب معتدل بنسبة 2.8٪. الطلب العالمي يتراجع بسبب تباطؤ الإنتاج الصناعي في الصين، ويتجاوز إنتاج أوبك+ الحصص بنسبة 3٪ [1]. معنويات السياق محايدة مع زخم سردي مستقر [1]. تأثيرات السياسة محايدة عبر مجالات الأمن والتمويل والاقتصاد [1].
+
+**Evidence Assessment**
+The forecast is based on a Random Forest Ensemble model using 252 data points from Polygon.io real-time market data, with 86% confidence for the 30-day forecast [1]. Key drivers include technical indicators and fundamental factors like OPEC+ production and Chinese demand [1]. A weak signal indicates weak alignment between temporal drivers and context themes, suggesting a need to reduce confidence [1]. No trusted sources were found in the walled garden query [1]. Data on specific 2026 events or legislation is missing.
+
+**تقييم الأدلة**
+يعتمد التوقع على نموذج Random Forest Ensemble باستخدام 252 نقطة بيانات من بيانات السوق في الوقت الفعلي من Polygon.io، مع ثقة بنسبة 86٪ للتوقع لمدة 30 يومًا [1]. تشمل المحركات الرئيسية المؤشرات الفنية والعوامل الأساسية مثل إنتاج أوبك+ والطلب الصيني [1]. تشير إشارة ضعيفة إلى ضعف التوافق بين محركات التوقيت وموضوعات السياق، مما يشير إلى الحاجة إلى تقليل الثقة [1]. لم يتم العثور على مصادر موثوقة في استعلام الحديقة المسورة [1]. البيانات الخاصة بأحداث أو تشريعات محددة لعام 2026 مفقودة.
+
+**Forecast Outlook**
+The 30-day forecast is for oil prices to decline 2.4% to $85.51 (±$1.20 range), testing support at $85.48. Consolidation is likely if support holds; a breakdown below $85.00 could accelerate a decline to $82.50. The downside may be capped by a potential OPEC+ emergency meeting scheduled for Q3 2026 [1]. The 90-day forecast is 82.53 with 71% confidence [1].
+
+**التوقعات المستقبلية**
+التوقع لم
+
+PREDICTION INDICATORS
+مؤشرات التنبؤ
+----------------------
+Metric: Oil prices during 2026
+Trend direction: bearish
+Current value: 87.62184726694548
+Forecast 30d: 85.51462007040269
+Forecast 90d: 82.53117440119043
+Confidence 30d: 0.8595089281645709
+Confidence 90d: 0.7095089281645709
+Model type: Random Forest Ensemble
+Data points: 252
+Volatility: 0.028098214367085827
+Drivers: Historical Price Trend; Volatility Index; Technical Indicators (RSI, MACD); Market Momentum
+Final forecast: 85.51462007040269
+Final confidence: 0.8595089281645709
+Sentiment adjustment: 0.0
+Risk weight: 0.27
+Volatility factor: 0.9262499999999999
+Adjustment rationale: Neutral adjustment (+0.00%) applied. Sentiment context has minimal impact on forecast. Risk weight: 0.27, Volatility factor: 0.93
+Context sentiment: 0.0
+Narrative momentum: stable
+Mentions (24h): 100
+Political risk score: 0.25
+Political risk confidence: 0.35
+Top scenario: Supply easing (48%)
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Brookings Institution, Chatham House, Carnegie Endowment, RAND Corporation

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "GS-003",
+  "name": "Chip Shortage (2021)",
+  "input_text": "Global semiconductor shortage affecting automotive manufacturing.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "technology",
+        "macroeconomics"
+      ],
+      "must_activate_agents": [
+        "temporal_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_I"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 1,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "automotive"
+      ],
+      "must_not_contain": []
+    }
+  }
+}

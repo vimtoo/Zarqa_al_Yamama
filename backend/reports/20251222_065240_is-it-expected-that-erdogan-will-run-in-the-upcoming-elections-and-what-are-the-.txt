@@ -1,0 +1,30 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T06:52:40.010714
+Request ID: req_20251222_095232_2f28a8b9
+
+EXECUTIVE SUMMARY
+------------------
+Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run? forecast shows decrease to 100.21 (current: 102.91) with 84% confidence. Context sentiment is neutral. Recommendation: Monitor for Market Analysis. Political risk: 0.25 (conf 60%). Top scenario: Fragmented or disputed outcome (48%).
+
+RESEARCH FINDINGS
+-----------------
+No trusted sources matched the query.
+
+FORECAST OUTLOOK
+---------------
+Metric: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Current: 102.90645473717194
+30-day forecast: 100.21122723852348
+Confidence: 0.8380895585673221
+
+RECOMMENDATIONS
+--------------
+Maintain current positions. High conviction based on 84% confidence. Monitor Market Analysis. Policy impact: Policy impacts show neutral pressure across governance, security, economy. Risk score at 0.25 implies low volatility.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: RAND Corporation, Peterson Institute, Chatham House, Brookings Institution, Gulf Research Center, Council on Foreign Relations, Carnegie Endowment, Arab Gulf States Institute

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "GS-013",
+  "name": "Putin Health Rumor",
+  "input_text": "Tabloid report claims Putin suffered cardiac arrest. Kremlin denies.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "politics"
+      ],
+      "must_activate_agents": [],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_I"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 4,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "denial"
+      ],
+      "must_not_contain": [
+        "confirmed"
+      ]
+    }
+  }
+}

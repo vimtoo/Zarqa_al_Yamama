@@ -1,0 +1,59 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T08:57:55.070160
+Request ID: req_20251222_115605_431d16de
+
+Executive Summary
+Turkish President Recep Tayyip Erdogan is expected to run in the upcoming elections, as indicated by his recent political maneuvers and statements. If Erdogan does run, it could have significant implications for Türkiye's political landscape and future direction. The context sentiment is neutral, and the recommendation is to monitor for Market Analysis. The political risk is assessed at 0.25 (confidence 60%). The top scenario is a fragmented or disputed outcome (48%).
+
+الملخص التنفيذي
+من المتوقع أن يترشح الرئيس التركي رجب طيب أردوغان في الانتخابات القادمة، كما يدل على ذلك تحركاته السياسية وبياناته الأخيرة. إذا ترشح أردوغان، فقد يكون له انعكاسات كبيرة على المشهد السياسي التركي والتوجه المستقبلي للبلاد. تعكس المشاعر حيال السياق حيادية، والتوصية هي مراقبة تحليل السوق. تم تقييم المخاطر السياسية عند 0.25 (ثقة 60٪). السيناريو الأعلى احتمالاً هو نتيجة مجزأة أو متنازع عليها (48٪).
+
+Research Findings
+The key actors in this scenario are Recep Tayyip Erdogan, the Turkish government, and Turkish opposition parties. The main topics are the Turkish elections, Erdogan's political future, and the potential impact on Türkiye's governance. The Americas region is mentioned, but no specific event counts are provided from news, GDELT, or ACLED sources.
+
+نتائج البحث
+الأطراف الرئيسية في هذا السيناريو هم رجب طيب أردوغان والحكومة التركية والأحزاب التركية المعارضة. الموضوعات الرئيسية هي الانتخابات التركية، ومستقبل أردوغان السياسي، والآثار المحتملة على حوكمة Türkiye. تم ذكر منطقة الأمريكتين، لكن لم يتم تقديم أعداد محددة من مصادر الأخبار أو GDELT أو ACLED.
+
+Evidence Assessment
+No evidence summary, claims, confidence level, contradictions, or unknowns are provided in either English or Arabic. The data appears to be missing key details needed for a comprehensive assessment.
+
+تقييم الأدلة 
+لا يتم تقديم ملخص للأدلة أو المطالبات أو مستوى الثقة أو التناقضات أو المجهولات باللغتين الإنجليزية أو العربية. يبدو أن البيانات تفتقد تفاصيل رئيسية ضرورية للتقييم الشامل.
+
+Risks & Scenarios
+The political risk score is 0.25. Three scenarios are considered: 
+1. Incumbent advantage holds (18%)
+2. Opposition gains ground (34%)
+3. Fragmented or disputed outcome (48%)
+
+المخاطر والسيناريوهات
+درجة مخاطر السياسية هي 0.25. يتم النظر في ثلاثة سيناريوهات:
+1. يحتفظ الموجودون بالميزة (18٪)
+2. المعارضة تكسب أرضية (34٪)
+3. نتيجة مجزأة أو متنازع عليها (48٪)
+
+Recommendations
+The strategic recommendation is to monitor Market Analysis indicators and political signals, updating the assessment as new evidence emerges.
+
+التوصيات
+التوصية الاستراتيجية هي مراقبة مؤشرات تحليل السوق والإشارات السياسية، وتحديث التقييم مع ظهور أدلة جديدة.
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: RAND Corporation, Council on Foreign Relations, Peterson Institute, Gulf Research Center, Carnegie Endowment, Chatham House, Arab Gulf States Institute, Brookings Institution

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "GS-010",
+  "name": "Brazil Congress Attack",
+  "input_text": "Supporters of former president storm Brazilian Congress and Supreme Court.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "politics",
+        "security"
+      ],
+      "must_activate_agents": [
+        "political_studies_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_IV"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 2,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "storm"
+      ],
+      "must_not_contain": []
+    }
+  }
+}

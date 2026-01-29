@@ -1,0 +1,53 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T08:57:23.428630
+Request ID: req_20251222_115605_431d16de
+
+Executive Summary
+Turkish President Recep Tayyip Erdogan is expected to run in the upcoming elections, as indicated by his recent political maneuvers and statements. If Erdogan does run, it could have significant implications for Türkiye's political landscape and future direction. The context sentiment is neutral, and the recommendation is to monitor for Market Analysis. The political risk is assessed at 0.25 (confidence 60%), with the top scenario being a fragmented or disputed outcome (48%).
+
+الملخص التنفيذي
+من المتوقع أن يترشح الرئيس التركي رجب طيب أردوغان في الانتخابات المقبلة، كما يدل على ذلك تحركاته وتصريحاته السياسية الأخيرة. إذا ترشح أردوغان، فقد يكون له انعكاسات كبيرة على المشهد السياسي والمستقبل التركي. تعكس المشاعر العامة حيال هذا السياق موقفا محايدا، وتتمثل التوصية في مراقبة تحليل السوق. تم تقييم المخاطر السياسية بنسبة 0.25 (ثقة 60%)، حيث يعتبر السيناريو الأعلى احتمالا هو النتيجة المتنازع عليها أو المتناثرة (48%).
+
+Research Findings
+Recent political maneuvers and statements by Erdogan indicate his intention to run in the upcoming elections. The implications of his potential candidacy on Türkiye's governance and political future are significant. However, the context sentiment remains neutral, suggesting a stable narrative momentum with limited mentions in the past 24 hours.
+
+نتائج البحث
+تشير التحركات والتصريحات السياسية الأخيرة من قبل أردوغان إلى نيته الترشح في الانتخابات المقبلة. الآثار المترتبة على ترشحه المحتمل على الحوكمة وال مستقبل السياسي التركي هامة. ومع ذلك، تبقى المشاعر العامة حيال هذا السياق محايدة، مما يشير إلى زخم سردي مستقر مع عدد محدود من الإشارات في الـ 24 ساعة الماضية.
+
+Evidence Assessment
+The evidence for Erdogan's expected candidacy is based on his recent political activities and statements. However, the assessment lacks specific details or a comprehensive sources list to fully substantiate the claims. The missing data may include polling data, opposition responses, or other relevant indicators.
+
+تقييم الأدلة
+تعتمد الأدلة على توقع ترشح أردوغان على نشاطه وتصريحاته السياسية الأخيرة. ومع ذلك، يفتقد التقييم تفاصيل محددة أو قائمة شاملة بالمصادر للتحقق تماما من الادعاءات. قد تشمل البيانات المفقودة بيانات استطلاع الرأي، وردود المعارضة، أو مؤشرات أخرى ذات صلة.
+
+Risks & Scenarios
+The political risk is assessed at 0.25, with a confidence level of 60%. The top scenario, with a probability of 48%, is a fragmented or disputed outcome. Other scenarios include the incumbent advantage holding (18%) and the opposition gaining ground (34%). These scenarios are derived from the risk score and neutral sentiment.
+
+المخاطر والسيناريوهات
+تم تقييم المخاطر السياسية بنسبة 0.25، مع مستوى ثقة 60%. السيناريو الأعلى، مع احتمال 48%، هو نتيجة متنازع عليها أو متناثرة. تشمل السيناريوهات الأخرى احتفاظ المترشح الحالي بميزته (18%) وتقدم المعارضة (34%). تستند هذه السيناريوهات إلى درجة المخاطر والمشاعر المحايدة.
+
+Recommendations
+The strategic recommendation is to monitor Market Analysis indicators and political signals, updating the assessment as new evidence emerges. This approach will provide a more comprehensive understanding of the potential impacts of Erdogan's candidacy on Türkiye's political landscape and future direction.
+
+التوصيات
+تتمثل التوصية الاستراتيجية في مراقبة مؤشرات تحليل السوق والإشارات السياسية، وتحديث التقييم مع ظهور أدلة جديدة. سوف يوفر هذا الأسلوب فهمًا أكثر شمولية للآثار المحتملة لترشح أردوغان على المشهد السياسي والمستقبل التركي.
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: RAND Corporation, Council on Foreign Relations, Peterson Institute, Gulf Research Center, Carnegie Endowment, Chatham House, Arab Gulf States Institute, Brookings Institution

@@ -1,0 +1,130 @@
+INTELLIGENCE BRIEF
+==================
+Subject: Middle East Oil Price
+Date: 2025-12-24
+Classification: UNCLASSIFIED
+
+**ENGLISH BRIEF**  
+
+1. **Executive Summary**  
+   - Decision: Maintain current oil market positions.  
+   - Probability: 75% confidence in $89.60 Brent crude price forecast within 30 days.  
+   - Confidence: High (0.75), driven by quantitative model output; low political risk score (0.25) masks unmodeled disruptions.  
+
+2. **Situation Assessment**  
+   *Facts:*  
+   - Current Brent crude price: $92.02 [Polygon.io, 2025].  
+   - 30-day forecast: $89.60 (2.6% decline) with 83.7% model confidence [Temporal Forecast, 2025].  
+   - Primary drivers cited: OPEC+ production cuts, non-OPEC supply constraints [Executive Summary, 2025].  
+   - Political risk score: 0.25 (low volatility) [Policy Impact, 2025].  
+   - No evidence found for OPEC+ reference basket price via walled-garden query [Walled Garden Query, 2025].  
+
+   *Interpretation:*  
+   - Supply tightening is posited as the primary driver, but no specific evidence supports OPEC+ actions [Executive Summary, 2025].  
+   - Low political risk score (0.25) is interpreted as neutral market pressure, yet regional conflict escalation risks remain unquantified [Think Tank Insights, 2025].  
+
+3. **Forecast Analysis**  
+   *Scenarios:*  
+   - **Supply easing (48% probability):** Driven by U.S. SPR releases or demand softening [Scenario Probabilities, 2025].  
+   - **Baseline supply (34% probability):** Sustained OPEC+ quotas with moderate volatility [Scenario Probabilities, 2025].  
+   - **Supply tightening (18% probability):** OPEC+ cuts or Kuwaiti parliamentary intervention [Scenario Probabilities, 2025].  
+
+   *Drivers:*  
+   - Technical indicators (RSI, MACD), historical trends, and market momentum [Temporal Forecast, 2025].  
+   - China/EU demand softening and regional de-escalation [LLM Insights, 2025].  
+
+   *Constraints:*  
+   - Model relies on 252 data points; no real-time geopolitical event integration [Temporal Forecast, 2025].  
+   - Weak signal: Misalignment between temporal drivers and context themes reduces confidence [Weak Signals, 2025].  
+
+4. **Key Risks & Uncertainties**  
+   *Known Unknowns:*  
+   - OPEC+ production decisions lack verifiable evidence; Kuwait’s adherence to quotas is unconfirmed [Executive Summary, 2025].  
+   - No data on U.S. SPR release timing or magnitude [LLM Insights, 2025].  
+   - Regional conflict spillover (e.g., Israel-Hamas crisis) could invalidate low political risk score [LLM Insights, 2025].  
+
+   *Falsification Criteria:*  
+   - Brent crude price >$92.00 within 30 days invalidates the $89.60 forecast [Temporal Forecast, 2025].  
+   - OPEC+ announces no production cuts by January 15, 2026 [Think Tank Insights, 2025].  
+
+5. **Strategic Implications**  
+   - Monitor OPEC+ meeting outcomes (next scheduled: January 10, 2026) and U.S. SPR release announcements [Executive Summary, 2025].  
+   - Track global inventory draws via EIA reports; a draw >5M barrels/week would accelerate bearish momentum [LLM Insights, 2025].  
+   - Watch for Kuwaiti parliamentary actions on oil quotas; any deviation from Amiri Decree frameworks would signal supply tightening [Think Tank Insights, 2025].  
+
+---  
+
+**الملخص التنفيذي**  
+- القرار: الحفاظ على المراكز الحالية في سوق النفط.  
+- الاحتمال: 75% ثقة في سعر نفط برنت عند 89.60 دولارًا خلال 30 يومًا.  
+- الثقة: عالية (0.75)، مدعومة بنتائج النموذج الكمي؛ يُخفي مؤشر المخاطر السياسية المنخفض (0.25) اضطرابات غير مُضمنة.  
+
+**التقييم الوضع**  
+*الحقائق:*  
+- سعر نفط برنت الحالي: 92.02 دولار [Polygon.io، 2025].  
+- التوقع لـ 30 يومًا: 89.60 دولار (انخفاض 2.6%) بثقة نموذجية 83.7% [التنبؤ الزمني، 2025].  
+- العوامل الرئيسية المذكورة: خفض إنتاج أوبك+ وقيود العرض غير الأوبك [الملخص التنفيذي، 2025].  
+- مؤشر المخاطر السياسية: 0.25 (تقلبات منخفضة) [تأثير السياسة، 2025].  
+- لا توجد نتائج لسعر سلة أوبك المرجعي عبر الاستعلام المغلق [استعلام الحديقة المغلقة، 2025].  
+
+*التفسير:*  
+- يُفترض أن ضيق العرض هو العامل الرئيسي، لكن لا توجد أدلة محددة لدعم إجراءات أوبك+ [الملخص التنفيذي، 2025].  
+- يُفسر المؤشر المنخفض للمخاطر السياسية (0.25) كضغط محايد على السوق، مع استمرار مخاطر تصعيد الصراعات الإقليمية غير المُقاسة [رؤى مراكز الأبحاث، 2025].  
+
+**تحليل التوقعات**  
+*السيناريوهات:*  
+- **تخفيف العرض (48% احتمال):** مدفوع بإفراجات المخزون الاستراتيجي الأمريكي أو تراجع الطلب [احتمالات السيناريوهات، 2025].  
+- **العرض الأساسي (34% احتمال):** استمرار حصص أوبك+ مع تقلبات معتدلة [احتمالات السيناريوهات، 2025].  
+- **ضيق العرض (18% احتمال):** خفض إنتاج أوبك+ أو تدخل برلماني كويتي [احتمالات السيناريوهات، 2025].  
+
+*العوامل الدافعة:*  
+- المؤشرات الفنية (RSI، MACD)، الاتجاهات التاريخية، وقوة السوق [التنبؤ الزمني، 2025].  
+- تراجع الطلب من الصين والاتحاد الأوروبي وانحسار التوترات الإقليمية [رؤى الذكاء الاصطناعي، 2025].  
+
+*القيود:*  
+- يعتمد النموذج على 252 نقطة بيانات دون دمج أحداث جيوسياسية فورية [التنبؤ الزمني، 2025].  
+- إشارة ضعيفة: عدم توافق بين العوامل الزمنية والمواضيع السياقية يقلل الثقة [الإشارات الضعيفة، 2025].  
+
+**المخاطر الرئيسية والغموض**  
+*المجهول المعروف:*  
+- قرارات أوبك+ للإنتاج تفتقر لأدلة قابلة للتحقق؛ التزام الكويت بالحصص غير مؤكد [الملخص التنفيذي، 2025].  
+- لا توجد بيانات حول توقيت أو حجم إفراجات المخزون الاستراتيجي الأمريكي [رؤى الذكاء الاصطناعي، 2025].  
+- تصعيد الصراعات الإقليمية (مثل أزمة إسرائيل-حماس) قد يُبطل مؤشر المخاطر المنخفض [رؤى الذكاء الاصطناعي، 2025].  
+
+*معايير التكذيب:*  
+- سعر
+
+## Appendix A: Quantitative Indicators
+PREDICTION INDICATORS
+مؤشرات التنبؤ
+----------------------
+Metric: Middle East Oil Price
+Trend direction: bearish
+Current value: 92.02328998925246
+Forecast 30d: 89.60159985196034
+Forecast 90d: 86.2596768147757
+Confidence 30d: 0.8368394308033382
+Confidence 90d: 0.6868394308033382
+Model type: Random Forest Ensemble
+Data points: 252
+Volatility: 0.03263211383933235
+Drivers: Historical Price Trend; Volatility Index; Technical Indicators (RSI, MACD); Market Momentum
+Final forecast: 89.60159985196034
+Final confidence: 0.75
+Sentiment adjustment: 0.0
+Risk weight: N/A
+Volatility factor: 1.0
+Adjustment rationale: Sentiment adjusted
+Context sentiment: 0.0
+Narrative momentum: stable
+Mentions (24h): 1000
+Political risk score: 0.25
+Political risk confidence: 0.35
+Top scenario: Supply easing (48%)
+
+## Appendix B: Primary Source Data
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.

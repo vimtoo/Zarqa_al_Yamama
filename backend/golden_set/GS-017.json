@@ -1,0 +1,31 @@
+{
+  "scenario_id": "GS-017",
+  "name": "Election Night (Generic)",
+  "input_text": "Polls close in peaceful general election. Vote counting underway.",
+  "expected_behavior": {
+    "routing": {
+      "must_include_domains": [
+        "politics"
+      ],
+      "must_activate_agents": [
+        "political_studies_analyst"
+      ],
+      "forbidden_agents": []
+    },
+    "metrics": {
+      "conflict_intensity_band": "BAND_I"
+    },
+    "uncertainty": {
+      "minimum_unknown_factors": 1,
+      "forbidden_confidence": "HIGH"
+    },
+    "narrative_invariants": {
+      "must_contain_keywords": [
+        "counting"
+      ],
+      "must_not_contain": [
+        "fraud"
+      ]
+    }
+  }
+}

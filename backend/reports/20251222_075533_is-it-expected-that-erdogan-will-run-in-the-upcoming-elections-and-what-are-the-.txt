@@ -1,0 +1,50 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T07:55:33.557096
+Request ID: req_20251222_105525_599ec05e
+
+EXECUTIVE SUMMARY
+الملخص التنفيذي
+------------------
+Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run? forecast shows decrease to 102.47 (current: 104.88) with 87% confidence. Context sentiment is neutral. Recommendation: Monitor for Market Analysis. Political risk: 0.25 (conf 60%). Top scenario: Fragmented or disputed outcome (48%).
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+RESEARCH FINDINGS
+نتائج البحث
+-----------------
+No trusted sources matched the query.
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+FORECAST OUTLOOK
+توقعات السيناريو
+---------------
+Metric: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Current: 104.87666460810372
+30-day forecast: 102.47433398807328
+Confidence: 0.8709375456392211
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+RECOMMENDATIONS
+التوصيات
+--------------
+Maintain current positions. High conviction based on 87% confidence. Monitor Market Analysis. Policy impact: Policy impacts show neutral pressure across governance, economy, technology. Risk score at 0.25 implies low volatility.
+لا تتوفر ترجمة عربية تلقائية في وضع الطوارئ.
+
+EVIDENCE ASSESSMENT
+تقييم الأدلة
+-------------------
+Summary (EN): Evidence summary unavailable.
+Summary (AR): ملخص الأدلة غير متوفر.
+
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: Chatham House, Gulf Research Center, Council on Foreign Relations, Peterson Institute, RAND Corporation, Carnegie Endowment, Brookings Institution, Arab Gulf States Institute

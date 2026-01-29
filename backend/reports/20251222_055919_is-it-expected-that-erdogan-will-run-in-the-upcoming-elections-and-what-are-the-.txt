@@ -1,0 +1,56 @@
+FORECAST REPORT
+---------------
+Scenario: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Generated (UTC): 2025-12-22T05:59:19.630971
+Request ID: req_20251222_085912_168fc8ee
+
+EXECUTIVE SUMMARY
+------------------
+Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run? forecast shows decrease to 100.11 (current: 102.65) with 85% confidence. Context sentiment is neutral. Recommendation: Monitor for Market Analysis. Political risk: 0.25 (conf 60%). Top scenario: Fragmented or disputed outcome (48%).
+
+RESEARCH FINDINGS
+-----------------
+No trusted sources matched the query.
+
+FORECAST OUTLOOK
+---------------
+Metric: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Current: 102.64631333624281
+30-day forecast: 100.10839771965865
+Confidence: 0.8527514107330287
+
+RECOMMENDATIONS
+--------------
+Maintain current positions. High conviction based on 85% confidence. Monitor Market Analysis. Policy impact: Policy impacts show neutral pressure across governance, energy, environment. Risk score at 0.25 implies low volatility.
+
+PREDICTION INDICATORS
+----------------------
+Metric: Is it expected that Erdogan will run in the upcoming elections, and what are the indications of this, and what impact will it have on Türkiye if he does run?
+Trend direction: bearish
+Current value: 102.64631333624281
+Forecast 30d: 100.10839771965865
+Forecast 90d: 96.54401896971207
+Confidence 30d: 0.8527514107330287
+Confidence 90d: 0.7027514107330287
+Model type: Random Forest Ensemble
+Data points: 252
+Volatility: 0.02944971785339425
+Drivers: Historical Price Trend; Volatility Index; Technical Indicators (RSI, MACD); Market Momentum
+Final forecast: 100.10839771965865
+Final confidence: 0.8527514107330287
+Sentiment adjustment: 0.0
+Risk weight: 0.675
+Volatility factor: 0.9262499999999999
+Adjustment rationale: Neutral adjustment (+0.00%) applied. Sentiment context has minimal impact on forecast. Risk weight: 0.68, Volatility factor: 0.93
+Context sentiment: 0.0
+Narrative momentum: stable
+Mentions (24h): 100
+Political risk score: 0.25
+Political risk confidence: 0.6
+Top scenario: Fragmented or disputed outcome (48%)
+
+SOURCES
+--------
+No trusted sources returned for this query.
+
+Think tank sources: RAND Corporation, Brookings Institution, Gulf Research Center, Chatham House, Carnegie Endowment, Arab Gulf States Institute, Council on Foreign Relations, Peterson Institute

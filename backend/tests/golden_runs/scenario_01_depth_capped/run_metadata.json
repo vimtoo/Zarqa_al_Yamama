@@ -1,0 +1,11 @@
+{
+  "scenario_id": "scenario_01_answerable",
+  "timestamp": "2025-12-25T08:24:46.755024",
+  "termination_reason": "PASS",
+  "max_depth": 3,
+  "recursion_stats": {
+    "depth": 4,
+    "queries": 4
+  },
+  "governor_halt_present": false
+}

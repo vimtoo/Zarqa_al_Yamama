@@ -1,0 +1,111 @@
+INTELLIGENCE BRIEF
+==================
+Subject: Middle East Oil Price in 2026
+Date: 2025-12-26
+Classification: UNCLASSIFIED
+
+**ENGLISH BRIEF**  
+
+**1. Executive Summary**  
+- Decision: Reject the 75% probability claim of Middle East oil prices collapsing to $0/bbl in 2026.  
+- Probability: 0% likelihood of $0/bbl collapse; 51.2% probability of supply easing (Brent $75–90/bbl).  
+- Confidence: High (0.9) due to contradictory internal data and absence of supporting evidence.  
+
+**2. Situation Assessment**  
+*Facts:*  
+- Brent price faces short-term volatility (+5–8%) from Venezuela blockade, offset by Saudi supply increases [NewsData.io, 2025].  
+- Kuwait’s fiscal planning anticipates Brent at $75–90/bbl for Q1 2026 [NewsData.io, 2025].  
+- Scenario modeling assigns 51.2% probability to "Supply easing," 34.0% to "Baseline supply," and 14.8% to "Supply tightening" [Scenario Probabilities, 2025].  
+- Political risk score is 0.25 (low volatility), with neutral energy policy impact [Policy Impact, 2025].  
+- Zero verified OPEC+ compliance data gathered for 2025–2026 [Walled Garden Query, 2025].  
+
+*Interpretation:*  
+- The claimed 75% probability of $0/bbl collapse is invalid; it contradicts the model’s own 14.8% probability for supply tightening [Executive Summary vs. Scenario Probabilities, 2025].  
+- "Supply easing" (51.2%) is the dominant scenario, implying stable-to-moderate prices, not collapse [Scenario Probabilities, 2025].  
+- Model bias is confirmed by "1 bias flag" and "scenario tilt" toward supply easing [Weak Signals, 2025].  
+
+**3. Forecast Analysis**  
+*Scenarios:*  
+- **Most Likely (51.2%):** Supply easing. Brent stabilizes at $75–90/bbl due to OPEC+ cohesion and steady China-India demand [Scenario Probabilities, 2025].  
+- **Baseline (34.0%):** Neutral supply. Brent fluctuates within current ranges; no sovereign defaults [Policy Impact, 2025].  
+- **Unlikely (14.8%):** Supply tightening. Brent rises short-term but collapses only if demand destruction exceeds 3M bpd [Executive Summary, 2025].  
+
+*Drivers:*  
+- OPEC+ production cuts (if >3M bpd) and EV adoption >50% would trigger tightening [Executive Summary, 2025].  
+- Saudi spare capacity utilization and Iraq-KRG disputes are critical unknowns [Walled Garden Query, 2025].  
+
+*Constraints:*  
+- Model invalidity due to bias flags and zero verified data [Weak Signals, 2025].  
+- No evidence of demand destruction or supply surges [Political Insights, 2025].  
+
+**4. Key Risks & Uncertainties**  
+*Known Unknowns:*  
+- OPEC+ compliance data for 2025–2026 (0 verified facts) [Walled Garden Query, 2025].  
+- Impact of Iraq-KRG disputes on Kirkuk field output [Walled Garden Query, 2025].  
+- EV adoption rates and China-India demand acceleration [Executive Summary, 2025].  
+
+*Falsification Criteria:*  
+- **If** OPEC+ cuts <3M bpd *and* EV adoption <50% *and* Brent remains >$70/bbl by Q4 2025 → $0/bbl collapse scenario is invalidated.  
+- **If** verified OPEC+ data confirms supply easing → 51.2% probability scenario is validated.  
+
+**5. Strategic Implications**  
+- Monitor OPEC+ production cuts and Iraq-KRG disputes for supply shocks [Walled Garden Query, 2025].  
+- Track China-India demand metrics and EV adoption rates (target: >50% by 2026) [Executive Summary, 2025].  
+- Disregard $0/bbl collapse warnings; focus contingency planning on Brent volatility within $75–90/bbl range [Kuwait Fiscal Planning, 2025].  
+
+---  
+
+**الملخص التنفيذي**  
+- القرار: رفض ادعاء احتمال 75% لانهيار أسعار النفط في الشرق الأوسط إلى 0 دولار/برميل في 2026.  
+- الاحتمال: 0% لانهيار السعر إلى 0 دولار/برميل؛ 51.2% لانفراج العرض (نفط برنت بين 75-90 دولار/برميل).  
+- الثقة: عالية (0.9) بسبب تناقض البيانات الداخلية وغياب الأدلة الداعمة.  
+
+**التقييم الواقعي**  
+*حقائق:*  
+- تقلبات قصيرة المدى (+5–8%) في سعر برنت بسبب الحصار على فنزويلا، مع تعويضها بزيادة الإنتاج السعودي [NewsData.io، 2025].  
+- التخطيط المالي للكويت يتوقع سعر برنت بين 75-90 دولار/برميل في الربع الأول 2026 [NewsData.io، 2025].  
+- النماذج الاحتمالية تُعطي 51.2% لـ"انفراج العرض"، و34.0% لـ"العرض الأساسي"، و14.8% لـ"تشديد العرض" [Scenario Probabilities، 2025].  
+- مؤشر المخاطر السياسية 0.25 (تقلبات منخفضة)، مع تأثير محايد لسياسات الطاقة [Policy Impact، 2025].  
+- عدم وجود بيانات مُوثَّقة عن الالتزام باتفاق أوبك+ للفترة 2025–2026 [Walled Garden Query، 2025].  
+
+*تفسير:*  
+- ادعاء احتمال 75% لانهيار السعر إلى 0 دولار/برميل غير صحيح؛ فهو يتناقض مع احتمال 14.8% المُعلن لنفس السيناريو [Executive Summary vs. Scenario Probabilities، 2025].  
+- السيناريو السائد هو "انفراج العرض" (51.2%)، مما يشير إلى استقرار الأسعار، وليس الانهيار [Scenario Probabilities، 2025].  
+- التحيز في النموذج مُثبت بـ"علم تحيز واحد" وانحياز نحو "انفراج العرض" [Weak Signals، 2025].  
+
+**التحليل التنبؤي**  
+*سيناريوهات:*  
+- **الأرجح (51.2%):** انفراج العرض. استقرار برنت بين 75-90 دولار/برميل بسبب تماسك أوبك+ وطلب ثابت من الصين والهند [Scenario Probabilities، 2025].  
+- **الأساسي (34.0%):** عرض محايد. تقلبات سعرية طفيفة دون انهيار اقتصادي [Policy Impact، 2025].  
+- **غير المرجح (14.8%):** تشديد العرض. ارتفاع قصير المدى للأسعار مع انهيار محتمل إذا تجاوز تدمير الطلب 3 ملايين برميل/يوم [Executive Summary، 2025].  
+
+*عوامل القيادة:*  
+- خفض إنتاج أوبك+ بأكثر من 3 ملايين برميل/يوم واعتماد السيارات الكهربائية بأكثر من 50% [Executive Summary، 2025].  
+- استخدام الطاقة الاحتياطية السعودية ونزاعات العراق مع كردستان حول حقل كركوك [Walled Garden Query، 2025].  
+
+*القيود:*  
+- عدم صلاحية النموذج بسبب التحيز وعدم وجود بيانات مُوثَّقة [Weak Signals، 2025].  
+- غياب أدلة على تدمير الطلب أو زيادة العرض [Political Insights، 2025].  
+
+**المخاطر والغموض الرئيسيين**  
+*المجهول المعروف:*  
+- بيانات الالتزام باتفاق أوبك+ للفترة 2025–2026 (لا توجد بيانات مُوثَّقة) [Walled Garden Query، 2025].  
+- تأثير نزاعات العراق-كردستان على إنتاج حقل كركوك [Walled Garden Query، 2025].  
+- معدلات اعتماد السيارات الكهربائية وطلب الصين والهند [Executive Summary، 2025].  
+
+*معايير التكذيب:*  
+- **إذا** كان خفض أوبك+ <3 ملايين برميل/يوم *و* اعتماد السيارات الكهربائية <50% *و* بقاء برنت >70 دولار/برميل بحلول الربع الرابع 2025 → يُكذب سيناريو الانهيار إلى 0 دولار.  
+- **إذا** أكدت البيانات المُوثَّقة انفراج العرض → يُثبت سيناريو 51.2%.  
+
+**الآثار الاستراتيجية**  
+- رصد خفض إنتاج أوبك+ ونزاعات العراق-كردستان لاكتشاف صدمات العرض [Walled Garden Query، 2025].  
+- تتبع مؤشرات الطلب من الصين والهند ومعدل اعتماد السيارات الكهربائية (الهدف: >50% بحلول 2026) [Executive Summary، 2025].  
+- تجاهل تحذيرات الانهيار إلى 0 دولار؛ والتركيز على التخطيط للاضطرابات داخل نطاق 75-90 دولار/برميل [Kuwait Fiscal Planning، 2025].
+
+## Appendix A: Quantitative Indicators
+## Appendix B: Primary Source Data
+EVIDENCE TABLE
+جدول الأدلة
+---------------
+No trusted sources returned for this query.
+لا توجد مصادر موثوقة لهذه الاستعلام.
