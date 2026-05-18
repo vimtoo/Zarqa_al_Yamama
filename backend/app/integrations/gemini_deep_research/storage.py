@@ -18,6 +18,15 @@ from app.integrations.gemini_deep_research.models import (
 DEFAULT_EVIDENCE_PACK_DIR = "data/research/evidence_packs"
 DEFAULT_SHADOW_RUN_DIR = "data/research/gemini_shadow_runs"
 DEFAULT_POLICY_REPORT_PATH = "docs/gemini_shadow_evaluation_policy_report.md"
+PROHIBITED_ARTIFACT_PATH_PARTS = {
+    "agent_outputs",
+    "final_report",
+    "forecaststate",
+    "fusion_result",
+    "horizon_forecasts",
+    "report_writer",
+    "signals",
+}
 
 
 def _truthy(value: str | None) -> bool:
@@ -33,16 +42,16 @@ def _configured_dir() -> Path:
     raw = os.getenv("SEER_GEMINI_EVIDENCE_PACK_DIR", DEFAULT_EVIDENCE_PACK_DIR)
     path = Path(raw)
     if path.is_absolute():
-        return path
-    return _project_root() / path
+        return _validate_sidecar_artifact_path(path)
+    return _validate_sidecar_artifact_path(_project_root() / path)
 
 
 def _configured_shadow_dir() -> Path:
     raw = os.getenv("SEER_GEMINI_SHADOW_RUN_DIR", DEFAULT_SHADOW_RUN_DIR)
     path = Path(raw)
     if path.is_absolute():
-        return path
-    return _project_root() / path
+        return _validate_sidecar_artifact_path(path)
+    return _validate_sidecar_artifact_path(_project_root() / path)
 
 
 def _shadow_base_dir(output_dir: str | Path | None = None) -> Path:
@@ -50,8 +59,27 @@ def _shadow_base_dir(output_dir: str | Path | None = None) -> Path:
         return _configured_shadow_dir()
     path = Path(output_dir)
     if path.is_absolute():
-        return path
-    return _project_root() / path
+        return _validate_sidecar_artifact_path(path)
+    return _validate_sidecar_artifact_path(_project_root() / path)
+
+
+def _validate_sidecar_artifact_path(path: Path) -> Path:
+    """Fail closed on traversal or production-like sidecar artifact paths."""
+    raw_parts = [str(part) for part in path.parts]
+    if any(part == ".." for part in raw_parts):
+        raise ValueError("Gemini sidecar artifact paths must not contain traversal segments.")
+    lowered_parts = [part.lower() for part in raw_parts]
+    blocked = sorted(
+        {
+            marker
+            for marker in PROHIBITED_ARTIFACT_PATH_PARTS
+            for part in lowered_parts
+            if marker in part
+        }
+    )
+    if blocked:
+        raise ValueError(f"Gemini sidecar artifacts cannot be written under production-like path parts: {blocked}")
+    return path
 
 
 def ensure_evidence_pack_dir() -> Path:
@@ -236,6 +264,7 @@ def save_policy_report(
     path = Path(output_path) if output_path else _project_root() / DEFAULT_POLICY_REPORT_PATH
     if not path.is_absolute():
         path = _project_root() / path
+    path = _validate_sidecar_artifact_path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         GeminiShadowEvaluationPolicy().render_policy_report(decision),

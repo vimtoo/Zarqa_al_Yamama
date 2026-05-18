@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -21,6 +23,7 @@ from app.integrations.gemini_deep_research.models import (  # noqa: E402
 )
 from app.integrations.gemini_deep_research.storage import load_shadow_runs_from_dir  # noqa: E402
 from fixtures.gemini_sidecar_fixtures import mock_shadow_run  # noqa: E402
+from gemini_artifact_safety_utils import assert_required_json_keys, read_json_artifact  # noqa: E402
 
 
 def _run(
@@ -328,3 +331,55 @@ def test_phase4la_loader_ignores_malformed_artifacts_and_runner_summaries(tmp_pa
     loaded = load_shadow_runs_from_dir(tmp_path)
 
     assert [run.run_id for run in loaded] == ["phase4la-valid-loaded"]
+
+
+def test_phase4lj_loader_handles_missing_shadow_run_and_evidence_pack_safely(tmp_path):
+    valid = mock_shadow_run(run_id="phase4lj-shadow-only-loaded")
+    valid_dir = tmp_path / valid.run_id
+    valid_dir.mkdir()
+    (valid_dir / "shadow_run.json").write_text(valid.model_dump_json(), encoding="utf-8")
+
+    missing_shadow_run_dir = tmp_path / "missing-shadow-run-json"
+    missing_shadow_run_dir.mkdir()
+    (missing_shadow_run_dir / "evidence_pack.json").write_text(
+        json.dumps({"provider": "gemini_deep_research"}),
+        encoding="utf-8",
+    )
+
+    invalid_shadow_run_dir = tmp_path / "invalid-shadow-run-json"
+    invalid_shadow_run_dir.mkdir()
+    (invalid_shadow_run_dir / "shadow_run.json").write_text("{not json", encoding="utf-8")
+
+    loaded = load_shadow_runs_from_dir(tmp_path)
+
+    assert [run.run_id for run in loaded] == ["phase4lj-shadow-only-loaded"]
+
+
+def test_phase4lj_policy_report_save_rejects_production_like_paths(tmp_path):
+    policy = GeminiShadowEvaluationPolicy()
+    decision = policy.evaluate_runs(_runs(5))
+
+    with pytest.raises(ValueError):
+        policy.save_policy_report(decision, output_path=tmp_path / "final_report" / "policy.md")
+
+
+def test_phase4lj_policy_decision_json_has_stable_review_schema(tmp_path):
+    policy = GeminiShadowEvaluationPolicy()
+    decision = policy.evaluate_runs(_runs(5))
+    path = tmp_path / "decision.json"
+    path.write_text(decision.model_dump_json(indent=2), encoding="utf-8")
+
+    payload = read_json_artifact(path)
+
+    assert_required_json_keys(
+        payload,
+        (
+            "decision_id",
+            "timestamp",
+            "recommendation",
+            "readiness_level",
+            "metric_summary",
+            "risk_summary",
+            "human_review_required",
+        ),
+    )

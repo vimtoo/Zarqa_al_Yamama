@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, os.path.dirname(__file__))
 
 from app.integrations.gemini_deep_research.assist_audit import (
@@ -16,6 +18,12 @@ from app.integrations.gemini_deep_research.assist_audit import (
 )
 from app.integrations.gemini_deep_research.assist_config import (
     GeminiAssistTrialResult,
+)
+from gemini_artifact_safety_utils import (  # noqa: E402
+    assert_artifact_under_root,
+    assert_no_production_like_path_markers,
+    assert_required_json_keys,
+    read_json_artifact,
 )
 from gemini_secret_scan_utils import (  # noqa: E402
     FAKE_SECRET_LIKE_VALUES,
@@ -162,3 +170,68 @@ def test_assist_modules_do_not_create_forecast_artifact_models():
 
     for model_name in ("Signal", "HorizonForecast", "FusionResult"):
         assert f"{model_name}(" not in source
+
+
+def test_phase4lj_saved_assist_audit_artifact_has_stable_schema_and_safe_path(tmp_path):
+    bundle = GeminiAssistAuditBundle(
+        run_id="audit-schema-path-safe",
+        query="Assess review-only risk.",
+        metadata={"review_note": "sidecar artifact only"},
+    )
+
+    path = save_assist_audit_bundle(bundle, output_dir=tmp_path)
+    payload = read_json_artifact(path)
+
+    assert_artifact_under_root(path, tmp_path)
+    assert_no_production_like_path_markers(path)
+    assert_required_json_keys(
+        payload,
+        (
+            "run_id",
+            "created_at",
+            "mode",
+            "insertion_point",
+            "inclusion_decision",
+            "risk_flags",
+            "metadata",
+        ),
+    )
+    assert ("agent" + "_outputs") not in path.read_text(encoding="utf-8")
+    assert "ForecastState" not in path.read_text(encoding="utf-8")
+
+
+def test_phase4lj_saved_assist_trial_result_has_stable_schema_and_safe_path(tmp_path):
+    result = GeminiAssistTrialResult(
+        run_id="trial-schema-path-safe",
+        status="blocked",
+        allowed=False,
+        blocked=True,
+        blocking_reasons=["Phase 4K remains NOT APPROVED"],
+    )
+
+    path = save_assist_trial_result(result, output_dir=tmp_path)
+    payload = read_json_artifact(path)
+
+    assert_artifact_under_root(path, tmp_path)
+    assert_no_production_like_path_markers(path)
+    assert_required_json_keys(payload, ("run_id", "status", "allowed", "blocked", "blocking_reasons"))
+
+
+@pytest.mark.parametrize(
+    "unsafe_output_dir",
+    [
+        "../gemini_assist_trials",
+        "agent_outputs",
+        "final_report",
+        "report_writer",
+        "ForecastState",
+        "horizon_forecasts",
+        "fusion_result",
+        "signals",
+    ],
+)
+def test_phase4lj_assist_audit_rejects_traversal_and_production_like_output_dirs(unsafe_output_dir):
+    bundle = GeminiAssistAuditBundle(run_id="audit-reject-unsafe-path")
+
+    with pytest.raises(ValueError):
+        save_assist_audit_bundle(bundle, output_dir=unsafe_output_dir)

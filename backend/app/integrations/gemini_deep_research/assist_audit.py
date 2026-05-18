@@ -49,6 +49,15 @@ SECRET_VALUE_PATTERNS = (
     re.compile(r"\b(?:api_key|password|token|secret)\s*=\s*[^\s,;]+", re.IGNORECASE),
     re.compile(r"\[REDACTED_API_KEY\]", re.IGNORECASE),
 )
+PROHIBITED_ARTIFACT_PATH_PARTS = {
+    "agent" + "_outputs",
+    "final_report",
+    "forecaststate",
+    "fusion_result",
+    "horizon_forecasts",
+    "report_writer",
+    "signals",
+}
 
 
 def _project_root() -> Path:
@@ -59,8 +68,27 @@ def _project_root() -> Path:
 def _resolve_path(path: str | Path) -> Path:
     candidate = Path(path)
     if candidate.is_absolute():
-        return candidate
-    return _project_root() / candidate
+        return _validate_sidecar_artifact_path(candidate)
+    return _validate_sidecar_artifact_path(_project_root() / candidate)
+
+
+def _validate_sidecar_artifact_path(path: Path) -> Path:
+    """Fail closed on traversal or production-like assist artifact paths."""
+    raw_parts = [str(part) for part in path.parts]
+    if any(part == ".." for part in raw_parts):
+        raise ValueError("Gemini assist audit artifact paths must not contain traversal segments.")
+    lowered_parts = [part.lower() for part in raw_parts]
+    blocked = sorted(
+        {
+            marker
+            for marker in PROHIBITED_ARTIFACT_PATH_PARTS
+            for part in lowered_parts
+            if marker in part
+        }
+    )
+    if blocked:
+        raise ValueError(f"Gemini assist audit artifacts cannot be written under production-like path parts: {blocked}")
+    return path
 
 
 def _base_dir(config_or_path: GeminiAssistConfig | str | Path | None = None) -> Path:

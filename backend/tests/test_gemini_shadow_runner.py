@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -14,6 +16,12 @@ from app.integrations.gemini_deep_research.models import (  # noqa: E402
 )
 from app.integrations.gemini_deep_research.shadow_runner import GeminiShadowRunner  # noqa: E402
 from fixtures.gemini_sidecar_fixtures import assert_sidecar_path  # noqa: E402
+from gemini_artifact_safety_utils import (  # noqa: E402
+    assert_artifact_under_root,
+    assert_no_production_like_path_markers,
+    assert_required_json_keys,
+    read_json_artifact,
+)
 from gemini_non_interference_utils import canonical_json_dump  # noqa: E402
 
 
@@ -426,3 +434,64 @@ def test_phase4la_shadow_runner_does_not_mutate_production_like_state(tmp_path):
     )
 
     assert canonical_json_dump(state) == before
+
+
+def test_phase4lj_runner_artifacts_have_stable_schema_and_safe_paths(tmp_path):
+    result = GeminiShadowRunner(client=FakeClient()).run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=tmp_path,
+    )
+    paths = GeminiShadowRunner(client=FakeClient()).save_outputs(result)
+    paths["runner_result_path"] = result.metadata["runner_result_path"]
+
+    assert_no_production_like_path_markers(paths)
+    for path in paths.values():
+        assert path is not None
+        assert_artifact_under_root(path, tmp_path)
+
+    run_dir = tmp_path / result.run_id
+    raw_payload = read_json_artifact(run_dir / "raw_result.json")
+    evidence_payload = read_json_artifact(run_dir / "evidence_pack.json")
+    shadow_payload = read_json_artifact(run_dir / "shadow_run.json")
+    runner_payload = read_json_artifact(run_dir / "runner_result.json")
+
+    assert_required_json_keys(raw_payload, ("run_id", "status", "raw_report", "raw_response"))
+    assert_required_json_keys(evidence_payload, ("provider", "run_id", "sources", "evidence_items", "claim_items"))
+    assert_required_json_keys(
+        shadow_payload,
+        ("run_id", "source_comparison", "evidence_comparison", "agent_overlap", "risk_assessment"),
+    )
+    assert_required_json_keys(
+        runner_payload,
+        ("run_id", "status", "raw_result_path", "evidence_pack_path", "shadow_run_json_path"),
+    )
+    assert (run_dir / "shadow_report.md").read_text(encoding="utf-8").startswith(
+        "# Gemini Deep Research Shadow Comparison"
+    )
+
+
+@pytest.mark.parametrize(
+    "unsafe_output_dir",
+    [
+        "../gemini_shadow_runs",
+        "agent_outputs",
+        "final_report",
+        "report_writer",
+        "ForecastState",
+        "horizon_forecasts",
+        "fusion_result",
+        "signals",
+    ],
+)
+def test_phase4lj_runner_rejects_traversal_and_production_like_output_dirs(unsafe_output_dir):
+    result = GeminiShadowRunner(client=FakeClient()).run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=unsafe_output_dir,
+    )
+
+    assert result.status == "failed"
+    assert "failed closed: ValueError" in (result.error_message or "")

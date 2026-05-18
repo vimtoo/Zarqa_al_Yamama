@@ -4,6 +4,8 @@ import os
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
@@ -25,6 +27,7 @@ from fixtures.gemini_sidecar_fixtures import (  # noqa: E402
     mock_seer_outputs,
     mock_shadow_run,
 )
+from gemini_artifact_safety_utils import assert_no_production_like_path_markers  # noqa: E402
 from gemini_non_interference_utils import canonical_json_dump  # noqa: E402
 
 
@@ -358,3 +361,24 @@ def test_phase4la_comparison_with_mock_fixtures_does_not_mutate_seer_outputs():
     assert run.run_id == "phase4la-compare"
     assert canonical_json_dump(seer_outputs) == before
     assert ("agent" + "_outputs") not in run.model_dump_json()
+
+
+def test_phase4lj_markdown_report_rendering_is_deterministic_for_same_shadow_run():
+    comparator = GeminiShadowComparator()
+    run = mock_shadow_run(run_id="phase4lj-deterministic-markdown", domain="security")
+
+    first = comparator.render_markdown_report(run)
+    second = comparator.render_markdown_report(run)
+
+    assert first == second
+    assert_no_production_like_path_markers(first)
+    assert "ForecastState" not in first
+    assert ("agent" + "_outputs") not in first
+
+
+def test_phase4lj_shadow_storage_rejects_production_like_configured_directory(tmp_path, monkeypatch):
+    monkeypatch.setenv("SEER_GEMINI_SHADOW_RUN_DIR", str(tmp_path / "agent_outputs"))
+    run = mock_shadow_run(run_id="phase4lj-reject-prod-path")
+
+    with pytest.raises(ValueError):
+        save_shadow_run(run)
