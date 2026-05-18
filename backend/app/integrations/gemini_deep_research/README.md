@@ -4,6 +4,12 @@ This package is an isolated wrapper for Gemini Deep Research through the Gemini 
 
 It does not connect to `workflow.py`, does not modify forecast state, does not write `agent_outputs`, and does not replace any TheSeer agent. It also does not create `EvidenceItem`, `ClaimItem`, `Signal`, `HorizonForecast`, or `FusionResult`.
 
+## Sidecar Operating Modes
+
+The canonical operating-mode reference is `docs/gemini_sidecar_operating_modes.md`.
+
+Gemini remains sidecar-only. `workflow.py` is unwired, Phase 4K remains NOT APPROVED, and no production state mutation is approved. The package must not write `agent_outputs`, must not create `Signal`, `HorizonForecast`, or `FusionResult` objects, and must not run live Gemini unless a separate explicit live-review approval package authorizes it.
+
 ## What Exists
 
 - `client.py`: creates and polls background Deep Research interactions.
