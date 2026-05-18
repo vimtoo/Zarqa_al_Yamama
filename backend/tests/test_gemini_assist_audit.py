@@ -1,0 +1,124 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from app.integrations.gemini_deep_research.assist_audit import (
+    GeminiAssistAuditBundle,
+    load_assist_audit_bundle,
+    load_assist_trial_result,
+    save_assist_audit_bundle,
+    save_assist_trial_result,
+)
+from app.integrations.gemini_deep_research.assist_config import (
+    GeminiAssistTrialResult,
+)
+
+
+ASSIST_MODULES = [
+    Path("backend/app/integrations/gemini_deep_research/assist_config.py"),
+    Path("backend/app/integrations/gemini_deep_research/assist_audit.py"),
+]
+
+
+def _assist_source() -> str:
+    return "\n".join(path.read_text(encoding="utf-8") for path in ASSIST_MODULES)
+
+
+def test_audit_bundle_redacts_secrets_in_config_and_feature_flag_snapshots():
+    api_value = "AIzaSyFakeSecretValueForTest"
+    token_value = "bearer-token-value"
+    bundle = GeminiAssistAuditBundle(
+        config_snapshot={
+            "GEMINI_API_KEY": api_value,
+            "nested": {"bearer_token": token_value, "safe_value": "visible"},
+        },
+        feature_flag_snapshot={"password_value": "hidden", "safe_flag": "visible"},
+        human_approval_metadata={"credential_note": "hidden"},
+        metadata={"notes": "visible"},
+    )
+
+    payload = bundle.model_dump_json()
+
+    assert api_value not in payload
+    assert token_value not in payload
+    assert "hidden" not in payload
+    assert "[REDACTED]" in payload
+    assert "visible" in payload
+
+
+def test_audit_bundle_default_inclusion_decision_is_not_included():
+    bundle = GeminiAssistAuditBundle()
+
+    assert bundle.inclusion_decision in {"review_only", "skipped"}
+    assert bundle.inclusion_decision != "included"
+
+
+def test_assist_trial_result_serializes_and_loads(tmp_path):
+    result = GeminiAssistTrialResult(
+        run_id="trial-1",
+        status="blocked",
+        allowed=False,
+        blocked=True,
+        blocking_reasons=["policy missing"],
+    )
+
+    path = save_assist_trial_result(result, output_dir=tmp_path)
+    loaded = load_assist_trial_result(path)
+
+    assert path == tmp_path / "trial-1" / "assist_trial_result.json"
+    assert loaded.run_id == "trial-1"
+    assert loaded.status == "blocked"
+    assert loaded.blocking_reasons == ["policy missing"]
+
+
+def test_assist_audit_bundle_saves_and_loads(tmp_path):
+    bundle = GeminiAssistAuditBundle(
+        run_id="audit-1",
+        query="Assess supply-chain risk.",
+        domain="technology",
+        probability_content_quarantined=False,
+        secret_warning_detected=False,
+        feature_flag_snapshot={"SEER_GEMINI_ASSIST_ENABLED": "1"},
+    )
+
+    path = save_assist_audit_bundle(bundle, output_dir=tmp_path)
+    loaded = load_assist_audit_bundle(path)
+
+    assert path == tmp_path / "audit-1" / "assist_audit_bundle.json"
+    assert loaded.run_id == "audit-1"
+    assert loaded.query == "Assess supply-chain risk."
+    assert loaded.inclusion_decision == "review_only"
+
+
+def test_saved_assist_artifacts_are_json_without_raw_secret_values(tmp_path):
+    bundle = GeminiAssistAuditBundle(
+        run_id="audit-secret",
+        config_snapshot={"api_key": "secret-value"},
+    )
+
+    path = save_assist_audit_bundle(bundle, output_dir=tmp_path)
+    payload = json.loads(path.read_text(encoding="utf-8"))
+
+    assert payload["config_snapshot"]["api_key"] == "[REDACTED]"
+    assert "secret-value" not in path.read_text(encoding="utf-8")
+
+
+def test_assist_modules_do_not_import_workflow_module():
+    source = _assist_source()
+
+    assert "import workflow" not in source
+    assert "from app.workflow" not in source
+
+
+def test_assist_modules_do_not_write_agent_outputs():
+    source = _assist_source()
+
+    assert ("agent" + "_outputs") not in source
+
+
+def test_assist_modules_do_not_create_forecast_artifact_models():
+    source = _assist_source()
+
+    for model_name in ("Signal", "HorizonForecast", "FusionResult"):
+        assert f"{model_name}(" not in source
