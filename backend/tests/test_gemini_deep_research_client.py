@@ -3,14 +3,18 @@ from __future__ import annotations
 import logging
 import os
 import sys
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, Mock
 
 import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from app.integrations.gemini_deep_research.client import GeminiDeepResearchClient
-from app.integrations.gemini_deep_research.models import GeminiDeepResearchStatus
+from app.integrations.gemini_deep_research.key_validation import validate_api_key_for_header
+from app.integrations.gemini_deep_research.models import (
+    GeminiDeepResearchRequest,
+    GeminiDeepResearchStatus,
+)
 from app.integrations.gemini_deep_research.prompts import build_deep_research_prompt
 from app.integrations.gemini_deep_research.storage import load_raw_result, save_raw_result
 
@@ -131,6 +135,74 @@ def test_prompt_builder_includes_citation_and_source_instructions():
     assert "cite each source" in prompt
     assert "URLs" in prompt
     assert "Do not fabricate citations" in prompt
+
+
+def test_phase4lg_valid_looking_fake_key_passes_local_header_validation_only():
+    result = validate_api_key_for_header(VALID_FAKE_GEMINI_API_KEY)
+
+    assert result.ok is True
+    assert result.reason_code == "ok"
+
+
+@pytest.mark.parametrize(
+    ("key", "reason_code"),
+    [
+        (None, "missing"),
+        ("", "empty"),
+        ("   ", "whitespace_only"),
+        ("test valid key with spaces 1234567890", "contains_space"),
+        ("[REDACTED_API_KEY]", "contains_brackets"),
+        ("test_valid_key_with_newline_123\n456", "contains_newline"),
+        ("test_valid_key_with_control_\x01123456", "contains_control_character"),
+        ("placeholder", "placeholder"),
+        ("sk-fakeSidecarSecretValueForValidation12345", "unsupported_secret_prefix"),
+        ("too-short", "too_short"),
+    ],
+)
+def test_phase4lg_malformed_keys_fail_closed_with_safe_messages(key, reason_code):
+    result = validate_api_key_for_header(key)
+    serialized = f"{result.reason_code} {result.safe_message}"
+
+    assert result.ok is False
+    assert result.reason_code == reason_code
+    if key and reason_code != "placeholder":
+        assert key not in serialized
+
+
+@pytest.mark.asyncio
+async def test_phase4lg_create_interaction_rejects_malformed_key_before_http(monkeypatch):
+    malformed = "sk-fakeSidecarSecretValueForCreate12345"
+    monkeypatch.setenv("SEER_USE_GEMINI_DEEP_RESEARCH", "1")
+    client = GeminiDeepResearchClient(api_key=malformed)
+    client._post_interaction = AsyncMock(return_value={"id": "should-not-call"})
+    client._headers = Mock(side_effect=AssertionError("headers must not be constructed"))
+
+    result = await client.create_interaction(
+        GeminiDeepResearchRequest(prompt="Research sidecar key handling.")
+    )
+
+    assert result.error_type == "INVALID_API_KEY_HEADER_VALUE"
+    assert "unsupported_secret_prefix" in result.error_message
+    assert malformed not in result.model_dump_json()
+    client._post_interaction.assert_not_called()
+    client._headers.assert_not_called()
+
+
+@pytest.mark.asyncio
+async def test_phase4lg_poll_interaction_rejects_malformed_key_before_http(monkeypatch):
+    malformed = "Authorization: Bearer fakeAuthorizationToken12345"
+    monkeypatch.setenv("SEER_USE_GEMINI_DEEP_RESEARCH", "1")
+    client = GeminiDeepResearchClient(api_key=malformed)
+    client._get_interaction = AsyncMock(return_value={"id": "should-not-call"})
+    client._headers = Mock(side_effect=AssertionError("headers must not be constructed"))
+
+    result = await client.poll_interaction("interaction-1", timeout_seconds=1)
+
+    assert result.error_type == "INVALID_API_KEY_HEADER_VALUE"
+    assert "contains_space" in result.error_message
+    assert malformed not in result.model_dump_json()
+    client._get_interaction.assert_not_called()
+    client._headers.assert_not_called()
 
 
 @pytest.mark.asyncio

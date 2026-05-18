@@ -2,7 +2,11 @@ from __future__ import annotations
 
 import copy
 import json
+import os
+import sys
 from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(__file__))
 
 from app.integrations.gemini_deep_research.assist_audit import GeminiAssistAuditBundle
 from app.integrations.gemini_deep_research.assist_config import (
@@ -17,6 +21,10 @@ from app.integrations.gemini_deep_research.client import GeminiDeepResearchClien
 from app.integrations.gemini_deep_research.models import (
     GeminiDeepResearchResult,
     GeminiDeepResearchStatus,
+)
+from gemini_secret_scan_utils import (  # noqa: E402
+    FAKE_SECRET_LIKE_VALUES,
+    assert_fake_secret_values_absent,
 )
 
 
@@ -275,6 +283,35 @@ def test_secret_warning_prevents_inclusion(tmp_path):
     assert result.audit_bundle.secret_warning_detected is True
     assert result.audit_bundle.inclusion_decision == "quarantined"
     assert secret not in result.audit_bundle.model_dump_json()
+
+
+def test_phase4lg_review_artifact_and_saved_paths_do_not_expose_secret_markers(tmp_path):
+    report = (
+        "Reuters reported current shipping pressure https://www.reuters.com/world/a.\n"
+        + "\n".join(FAKE_SECRET_LIKE_VALUES)
+    )
+    result = GeminiAssistNodeWrapper(client=FakeClient(report=report)).run(
+        {"scenario": "Assess Red Sea escalation risk", "domain": "general"},
+        config=_config(tmp_path),
+        policy_reference=_policy(),
+        approval_record=_approval(),
+        rollback_status=GeminiAssistRollbackStatus(),
+        mock=True,
+        attach_review_artifact=True,
+    )
+
+    assert result.audit_bundle.secret_warning_detected is True
+    assert_fake_secret_values_absent(json.dumps(result.updated_state))
+    for value in (
+        result.raw_result_path,
+        result.evidence_pack_path,
+        result.audit_bundle_path,
+        result.trial_result_path,
+        result.metadata["node_result_path"],
+    ):
+        payload = Path(value).read_text(encoding="utf-8")
+        assert_fake_secret_values_absent(payload)
+        assert "Authorization:" not in payload
 
 
 def test_audit_bundle_inclusion_decision_is_never_included_by_default():

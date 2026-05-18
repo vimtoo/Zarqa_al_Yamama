@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 import json
+import os
+import sys
 from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(__file__))
 
 from app.integrations.gemini_deep_research.assist_audit import (
     GeminiAssistAuditBundle,
@@ -12,6 +16,10 @@ from app.integrations.gemini_deep_research.assist_audit import (
 )
 from app.integrations.gemini_deep_research.assist_config import (
     GeminiAssistTrialResult,
+)
+from gemini_secret_scan_utils import (  # noqa: E402
+    FAKE_SECRET_LIKE_VALUES,
+    assert_fake_secret_values_absent,
 )
 
 
@@ -102,6 +110,38 @@ def test_saved_assist_artifacts_are_json_without_raw_secret_values(tmp_path):
 
     assert payload["config_snapshot"]["api_key"] == "[REDACTED]"
     assert "secret-value" not in path.read_text(encoding="utf-8")
+
+
+def test_phase4lg_audit_bundle_redacts_secret_like_string_values():
+    bundle = GeminiAssistAuditBundle(
+        run_id="audit-secret-like-values",
+        config_snapshot={"safe_note": list(FAKE_SECRET_LIKE_VALUES)},
+        feature_flag_snapshot={"safe_flag_note": " ".join(FAKE_SECRET_LIKE_VALUES)},
+        human_approval_metadata={"operator_note": "Authorization: Bearer fakeAuthorizationToken12345"},
+        metadata={"review_note": "sk-fakeSidecarSecretValueForRedaction12345"},
+    )
+
+    payload = bundle.model_dump_json()
+
+    assert_fake_secret_values_absent(payload)
+    assert "[REDACTED]" in payload
+
+
+def test_phase4lg_saved_audit_bundle_does_not_persist_authorization_header(tmp_path):
+    bundle = GeminiAssistAuditBundle(
+        run_id="audit-authorization-redaction",
+        metadata={
+            "safe_review_text": "Authorization: Bearer fakeAuthorizationToken12345",
+            "nested": {"safe_note": "api_key=fake_sidecar_api_key_value"},
+        },
+    )
+
+    path = save_assist_audit_bundle(bundle, output_dir=tmp_path)
+    payload = path.read_text(encoding="utf-8")
+
+    assert_fake_secret_values_absent(payload)
+    assert "Authorization:" not in payload
+    assert "Bearer " not in payload
 
 
 def test_assist_modules_do_not_import_workflow_module():

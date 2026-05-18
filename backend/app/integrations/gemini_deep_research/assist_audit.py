@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Literal, Mapping, Optional
@@ -30,7 +31,24 @@ InclusionDecision = Literal[
     "skipped",
 ]
 
-SENSITIVE_KEY_PARTS = ("key", "token", "secret", "password", "credential", "api")
+SENSITIVE_KEY_PARTS = (
+    "key",
+    "token",
+    "secret",
+    "password",
+    "credential",
+    "api",
+    "authorization",
+)
+
+SECRET_VALUE_PATTERNS = (
+    re.compile(r"\bAuthorization\s*:\s*[^\n\r]+", re.IGNORECASE),
+    re.compile(r"AIza[0-9A-Za-z_-]{10,}"),
+    re.compile(r"\bsk-[A-Za-z0-9_-]{10,}\b"),
+    re.compile(r"Bearer\s+[A-Za-z0-9._~+/=-]{10,}", re.IGNORECASE),
+    re.compile(r"\b(?:api_key|password|token|secret)\s*=\s*[^\s,;]+", re.IGNORECASE),
+    re.compile(r"\[REDACTED_API_KEY\]", re.IGNORECASE),
+)
 
 
 def _project_root() -> Path:
@@ -67,6 +85,11 @@ def _redact_sensitive(value: Any) -> Any:
         return redacted
     if isinstance(value, list):
         return [_redact_sensitive(item) for item in value]
+    if isinstance(value, str):
+        redacted = value
+        for pattern in SECRET_VALUE_PATTERNS:
+            redacted = pattern.sub("[REDACTED]", redacted)
+        return redacted
     return value
 
 

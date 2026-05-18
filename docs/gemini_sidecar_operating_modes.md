@@ -61,6 +61,7 @@ Prohibited paths and targets:
 
 - artifacts must be deterministic where possible
 - secrets must be absent or redacted
+- sidecar artifacts and audit logs must not persist raw `AIza`, `sk-`, `Bearer `, `api_key=`, `password=`, `token=`, `secret=`, `Authorization`, or `[REDACTED_API_KEY]` values
 - unsupported claims must fail closed or be skipped
 - malformed evidence packs and malformed shadow-run artifacts must not crash review tooling
 - review artifacts are not trusted production inputs

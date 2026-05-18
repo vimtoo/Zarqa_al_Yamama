@@ -42,7 +42,10 @@ COMMON_TRACKING_PARAMS = {
 }
 
 SECRET_PATTERNS = [
+    re.compile(r"\bAuthorization\s*:\s*[^\n\r]+", re.IGNORECASE),
+    re.compile(r"\[REDACTED_API_KEY\]", re.IGNORECASE),
     re.compile(r"AIza[0-9A-Za-z_-]{10,}"),
+    re.compile(r"\bsk-[A-Za-z0-9_-]{10,}\b"),
     re.compile(r"Bearer\s+[A-Za-z0-9._~+/=-]{16,}", re.IGNORECASE),
     re.compile(
         r"-----BEGIN [A-Z ]*PRIVATE KEY-----.*?-----END [A-Z ]*PRIVATE KEY-----",

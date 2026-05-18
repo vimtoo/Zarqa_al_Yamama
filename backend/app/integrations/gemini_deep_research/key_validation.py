@@ -27,6 +27,7 @@ contains_tab                key contains \\t
 contains_control_character  key contains any ASCII control char (0x00-0x1F, 0x7F)
 leading_or_trailing_ws      key has leading or trailing whitespace
 contains_space              key contains an internal space
+unsupported_secret_prefix   key resembles a different provider secret
 too_short                   key is shorter than MIN_KEY_LENGTH chars
 invalid_header_value        key cannot be safely encoded as an ISO-8859-1 HTTP header value
 """
@@ -167,14 +168,23 @@ def validate_api_key_for_header(key: Optional[str]) -> KeyValidationResult:
             "Replace it with a real, approved Gemini API key before live use.",
         )
 
-    # 8. Minimum length
+    # 8. Known non-Gemini secret prefixes. These must not be accepted as
+    #    provider headers for the Gemini client even if they are syntactically
+    #    safe HTTP header values.
+    if key.lower().startswith("sk-"):
+        return KeyValidationResult.fail(
+            "unsupported_secret_prefix",
+            "API key resembles a different provider secret prefix and is not valid for Gemini.",
+        )
+
+    # 9. Minimum length
     if len(key) < MIN_KEY_LENGTH:
         return KeyValidationResult.fail(
             "too_short",
             f"API key is shorter than {MIN_KEY_LENGTH} characters and is unlikely to be a valid key.",
         )
 
-    # 9. HTTP header value encoding check (ISO-8859-1 per RFC 7230)
+    # 10. HTTP header value encoding check (ISO-8859-1 per RFC 7230)
     try:
         key.encode("latin-1")
     except (UnicodeEncodeError, UnicodeDecodeError):

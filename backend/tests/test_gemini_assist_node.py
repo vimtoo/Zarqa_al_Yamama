@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import json
+import os
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, os.path.dirname(__file__))
 
 from app.integrations.gemini_deep_research.assist_config import (
     READY_FOR_ASSIST_RECOMMENDATION,
@@ -16,6 +20,10 @@ from app.integrations.gemini_deep_research.assist_node import GeminiAssistNodeWr
 from app.integrations.gemini_deep_research.models import (
     GeminiDeepResearchResult,
     GeminiDeepResearchStatus,
+)
+from gemini_secret_scan_utils import (  # noqa: E402
+    FAKE_SECRET_LIKE_VALUES,
+    assert_fake_secret_values_absent,
 )
 
 
@@ -344,6 +352,27 @@ def test_secret_warning_blocks_inclusion_when_required(tmp_path):
     assert result.audit_bundle.secret_warning_detected is True
     assert result.audit_bundle.inclusion_decision == "quarantined"
     assert "AIzaFakeSecretValueForTesting12345" not in serialized
+
+
+def test_phase4lg_assist_artifacts_redact_secret_like_report_content(tmp_path):
+    raw_report = (
+        "Reuters reported current shipping pressure https://www.reuters.com/world/a.\n"
+        + "\n".join(FAKE_SECRET_LIKE_VALUES)
+    )
+    result = _run_allowed(tmp_path, report=raw_report)
+
+    assert result.audit_bundle.secret_warning_detected is True
+    assert result.audit_bundle.inclusion_decision == "quarantined"
+    for artifact_path in (
+        result.raw_result_path,
+        result.evidence_pack_path,
+        result.audit_bundle_path,
+        result.metadata["node_result_path"],
+    ):
+        payload = Path(artifact_path).read_text(encoding="utf-8")
+        assert_fake_secret_values_absent(payload)
+        assert "Authorization:" not in payload
+        assert "Bearer " not in payload
 
 
 def test_review_only_mode_does_not_write_agent_outputs(tmp_path):
