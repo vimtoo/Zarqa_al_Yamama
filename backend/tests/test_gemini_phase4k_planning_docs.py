@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PLAN_PATH = ROOT / "docs" / "gemini_phase4k_minimal_workflow_patch_plan.md"
 APPROVAL_PATH = ROOT / "docs" / "gemini_phase4k_operator_approval_record.md"
 TOPOLOGY_RECORD_PATH = ROOT / "docs" / "gemini_phase4k_topology_mapping_record.md"
+DECISION_PACKAGE_PATH = ROOT / "docs" / "gemini_phase4k_operator_decision_package.md"
 
 
 def _read(path: Path) -> str:
@@ -17,6 +18,7 @@ def test_phase4k_planning_docs_exist():
     assert PLAN_PATH.exists()
     assert APPROVAL_PATH.exists()
     assert TOPOLOGY_RECORD_PATH.exists()
+    assert DECISION_PACKAGE_PATH.exists()
 
 
 def test_phase4k_approval_status_is_not_approved():
@@ -102,3 +104,38 @@ def test_phase4k_plan_uses_confirmed_schema_validator_target():
     assert 'workflow.add_edge("gemini_assist_noop", "schema_validator_node")' in plan
     assert "No `evidence_analyst` route is introduced." in plan
     assert "gemini_assist_noop -> evidence_analyst" not in plan
+
+
+def test_phase4k_operator_decision_package_preserves_not_approved_status():
+    package = _read(DECISION_PACKAGE_PATH)
+
+    assert "Phase 4K remains NOT APPROVED unless Qusai explicitly approves" in package
+    assert "v2_join_node -> gemini_assist_noop -> schema_validator_node" in package
+    assert "Option A" in package
+    assert "Option B" in package
+    assert "Option C" in package
+    assert (
+        "Recommended decision: **Option B — Keep Blocked**, unless Qusai explicitly wants "
+        "to test disabled topology wiring."
+        in package
+    )
+
+
+def test_phase4k_operator_decision_package_contains_approval_language():
+    package = _read(DECISION_PACKAGE_PATH)
+
+    assert (
+        "I, Qusai, approve Phase 4K implementation only for the minimal disabled/no-op route"
+        in package
+    )
+    assert "v2_join_node -> gemini_assist_noop -> schema_validator_node" in package
+
+
+def test_phase4k_operator_decision_package_preserves_boundaries():
+    package = _read(DECISION_PACKAGE_PATH)
+
+    assert "no `evidence_analyst` insertion" in package
+    assert "no live Gemini call" in package
+    assert "no API key" in package
+    assert "no `agent_outputs` write" in package
+    assert "no `Signal`/`HorizonForecast`/`FusionResult` creation" in package
