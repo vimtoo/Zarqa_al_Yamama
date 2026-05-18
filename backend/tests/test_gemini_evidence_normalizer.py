@@ -14,8 +14,13 @@ from app.integrations.gemini_deep_research.models import (
 from app.integrations.gemini_deep_research.normalizer import GeminiEvidenceNormalizer
 from fixtures.gemini_sidecar_fixtures import (  # noqa: E402
     duplicate_source_result,
+    fully_cited_claim_result,
+    invalid_url_source_result,
     malformed_missing_source_metadata_result,
     mock_evidence_pack,
+    probability_like_cited_claim_result,
+    uncited_claim_with_source_list_result,
+    weak_source_only_result,
 )
 
 
@@ -278,3 +283,69 @@ def test_phase4la_duplicate_sources_are_deterministically_deduplicated():
     assert len(pack_a.evidence_items) == 1
     assert pack_a.sources[0].canonical_url == "https://reuters.com/world/example"
     assert pack_a.evidence_items[0].content_hash == pack_b.evidence_items[0].content_hash
+
+
+def test_phase4ln_fully_cited_claim_produces_source_backed_evidence():
+    pack = GeminiEvidenceNormalizer().normalize_result(fully_cited_claim_result())
+    evidence_ids = {item.id for item in pack.evidence_items}
+
+    assert len(pack.sources) == 1
+    assert len(pack.evidence_items) == 1
+    assert pack.claim_items
+    assert all(evidence_id in evidence_ids for claim in pack.claim_items for evidence_id in claim.evidence_ids)
+    assert "UNSUPPORTED_CLAIM_SKIPPED" not in _codes(pack)
+
+
+def test_phase4ln_uncited_claim_is_skipped_and_not_promoted_to_evidence():
+    pack = GeminiEvidenceNormalizer().normalize_result(uncited_claim_with_source_list_result())
+    serialized = pack.model_dump_json()
+
+    assert "UNSUPPORTED_CLAIM_SKIPPED" in _codes(pack)
+    assert all("regional escalation will occur" not in claim.text.lower() for claim in pack.claim_items)
+    assert all("regional escalation will occur" not in item.snippet.lower() for item in pack.evidence_items)
+    assert ("agent" + "_outputs") not in serialized
+    for model_name in ("Signal", "HorizonForecast", "FusionResult"):
+        assert model_name not in serialized
+
+
+def test_phase4ln_invalid_url_source_creates_gap_without_claims_or_evidence():
+    pack = GeminiEvidenceNormalizer().normalize_result(invalid_url_source_result())
+
+    assert pack.sources == []
+    assert pack.evidence_items == []
+    assert pack.claim_items == []
+    assert "NO_VERIFIED_SOURCES" in _codes(pack)
+    assert any("No valid source URLs" in gap.reason for gap in pack.intelligence_gaps)
+
+
+def test_phase4ln_weak_source_quality_is_preserved_for_review():
+    pack = GeminiEvidenceNormalizer().normalize_result(weak_source_only_result())
+
+    assert len(pack.sources) == 1
+    assert pack.sources[0].source_type_hint == "social"
+    assert pack.evidence_items[0].reliability_tier == 5
+    assert "Inferred as social" in (pack.sources[0].reliability_notes or "")
+
+
+def test_phase4ln_probability_like_claim_is_quarantined_not_forecast_authority():
+    pack = GeminiEvidenceNormalizer().normalize_result(probability_like_cited_claim_result())
+    serialized = pack.model_dump_json()
+
+    assert "PROBABILITY_CONTENT_QUARANTINED" in _codes(pack)
+    assert pack.claim_items == []
+    assert "forecast content; it was quarantined" in " ".join(pack.uncertainty_notes)
+    assert ("agent" + "_outputs") not in serialized
+    for model_name in ("Signal", "HorizonForecast", "FusionResult"):
+        assert model_name not in serialized
+
+
+def test_phase4ln_citation_quality_warnings_are_deterministic():
+    first = GeminiEvidenceNormalizer().normalize_result(uncited_claim_with_source_list_result())
+    second = GeminiEvidenceNormalizer().normalize_result(uncited_claim_with_source_list_result())
+
+    assert [warning.model_dump(mode="json") for warning in first.normalizer_warnings] == [
+        warning.model_dump(mode="json") for warning in second.normalizer_warnings
+    ]
+    assert [gap.model_dump(mode="json") for gap in first.intelligence_gaps] == [
+        gap.model_dump(mode="json") for gap in second.intelligence_gaps
+    ]

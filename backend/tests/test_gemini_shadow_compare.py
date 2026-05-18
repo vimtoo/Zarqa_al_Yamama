@@ -26,6 +26,7 @@ from app.integrations.gemini_deep_research.storage import (  # noqa: E402
 from fixtures.gemini_sidecar_fixtures import (  # noqa: E402
     mock_seer_outputs,
     mock_shadow_run,
+    weak_source_only_result,
 )
 from gemini_artifact_safety_utils import assert_no_production_like_path_markers  # noqa: E402
 from gemini_non_interference_utils import canonical_json_dump  # noqa: E402
@@ -382,3 +383,49 @@ def test_phase4lj_shadow_storage_rejects_production_like_configured_directory(tm
 
     with pytest.raises(ValueError):
         save_shadow_run(run)
+
+
+def test_phase4ln_report_includes_review_only_caveat_not_production_forecast():
+    run = GeminiShadowComparator().compare(_pack(), _seer_outputs(), run_id="phase4ln-caveat")
+    report = GeminiShadowComparator().render_markdown_report(run)
+
+    assert "## 8. Review Caveat" in report
+    assert "not a production forecast" in report
+    assert "must not be used as workflow state" in report
+    assert "must not be treated as forecast artifacts" in report
+    assert ("agent" + "_outputs") not in report
+    assert "ForecastState" not in report
+
+
+def test_phase4ln_unsupported_claims_are_separated_as_human_review_risk():
+    pack = _pack()
+    pack.claim_items.append(
+        GeminiClaimCandidate(
+            id="phase4ln-unsupported",
+            text="Unsupported claim with a missing evidence reference.",
+            evidence_ids=["missing-evidence"],
+            confidence=0.5,
+            confidence_justification="Evidence-support confidence only; not a forecast probability.",
+            time_horizon="MEDIUM_TERM",
+        )
+    )
+
+    run = GeminiShadowComparator().compare(pack, _seer_outputs(), run_id="phase4ln-unsupported")
+    report = GeminiShadowComparator().render_markdown_report(run)
+
+    assert run.evidence_comparison.unsupported_gemini_claims_count == 1
+    assert run.risk_assessment.hallucination_risk == "high"
+    assert "unsupported Gemini claims: 1" in report
+    assert "lacked valid evidence linkage" in report
+    assert run.recommendation in {"Gemini useful as shadow only", "Gemini requires human review"}
+
+
+def test_phase4ln_weak_source_quality_is_visible_in_shadow_report():
+    pack = GeminiEvidenceNormalizer().normalize_result(weak_source_only_result())
+    run = GeminiShadowComparator().compare(pack, mock_seer_outputs(), run_id="phase4ln-weak-source")
+    report = GeminiShadowComparator().render_markdown_report(run)
+
+    assert run.risk_assessment.source_governance_risk == "high"
+    assert run.risk_assessment.overall_risk == "high"
+    assert "source-governance risk: high" in report
+    assert "social-only or aggregator-only" in report

@@ -383,3 +383,25 @@ def test_phase4lj_policy_decision_json_has_stable_review_schema(tmp_path):
             "human_review_required",
         ),
     )
+
+
+def test_phase4ln_unsupported_claims_block_assist_readiness_in_report():
+    policy = GeminiShadowEvaluationPolicy()
+    decision = policy.evaluate_runs(_runs(5, unsupported=3, risk="high"))
+    report = policy.render_policy_report(decision)
+
+    assert decision.recommendation != "Gemini ready for limited assist-mode trial"
+    assert "Unsupported claim average exceeds threshold." in decision.failed_criteria
+    assert "High-risk run ratio exceeds policy threshold." in decision.blocking_reasons
+    assert "average unsupported claims: 3.0" in report
+    assert "Unsupported claim average exceeds threshold." in report
+
+
+def test_phase4ln_source_governance_risk_requires_human_review():
+    decision = GeminiShadowEvaluationPolicy().evaluate_runs(
+        _runs(5, source_governance_risk="high", risk="high")
+    )
+
+    assert decision.human_review_required is True
+    assert decision.recommendation == "Gemini requires human review"
+    assert "Source-governance risk was high in at least one run." in decision.blocking_reasons

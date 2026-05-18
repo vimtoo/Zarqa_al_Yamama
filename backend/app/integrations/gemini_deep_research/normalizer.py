@@ -422,7 +422,7 @@ class GeminiEvidenceNormalizer:
         seen_texts: set[str] = set()
 
         for segment in self._claim_segments(raw_report):
-            canonical_urls = [canonicalize_url(url) for url in URL_RE.findall(segment)]
+            canonical_urls = [canonicalize_url(self._clean_url(url)) for url in URL_RE.findall(segment)]
             canonical_urls = [url for url in canonical_urls if url in source_by_canonical]
 
             if not canonical_urls:

@@ -346,6 +346,9 @@ class GeminiShadowEvaluationPolicy:
         if aggregate.critical_risk_runs or aggregate.secret_leakage_detected:
             recommendation = "Gemini requires human review"
             readiness = "human_review"
+        elif aggregate.source_governance_high_runs:
+            recommendation = "Gemini requires human review"
+            readiness = "human_review"
         elif aggregate.incomplete_input_runs or aggregate.malformed_runs:
             recommendation = "Gemini requires human review"
             readiness = "human_review"

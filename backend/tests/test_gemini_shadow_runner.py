@@ -495,3 +495,19 @@ def test_phase4lj_runner_rejects_traversal_and_production_like_output_dirs(unsaf
 
     assert result.status == "failed"
     assert "failed closed: ValueError" in (result.error_message or "")
+
+
+def test_phase4ln_saved_shadow_report_contains_review_caveat(tmp_path):
+    result = GeminiShadowRunner(client=FakeClient()).run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=tmp_path,
+    )
+    report = Path(result.shadow_report_path).read_text(encoding="utf-8")
+
+    assert "## 8. Review Caveat" in report
+    assert "not a production forecast" in report
+    assert "unsupported claims, weak-source notes, and risk flags" in report
+    assert "ForecastState" not in report
+    assert ("agent" + "_outputs") not in report

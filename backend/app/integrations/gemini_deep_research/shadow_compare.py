@@ -440,6 +440,14 @@ class GeminiShadowComparator:
             "## 7. Next Steps",
             *[f"- {step}" for step in (run.next_steps or ["Run another shadow comparison with complete local outputs."])],
             "",
+            "## 8. Review Caveat",
+            (
+                "This Gemini sidecar review artifact is not a production forecast, is not trusted "
+                "workflow input, must not be used as workflow state, and must not be treated as "
+                "forecast artifacts. Human reviewers must treat unsupported claims, weak-source "
+                "notes, and risk flags as review blockers until separately resolved."
+            ),
+            "",
         ])
 
     def save_shadow_run(self, shadow_run: GeminiShadowRun | Dict[str, Any]) -> Any:

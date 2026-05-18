@@ -108,6 +108,64 @@ def duplicate_source_result() -> GeminiDeepResearchResult:
     )
 
 
+def fully_cited_claim_result() -> GeminiDeepResearchResult:
+    """Return a report where the claim is directly source-backed."""
+    return mock_gemini_result(
+        run_id="fixture-fully-cited-claim",
+        report=(
+            "Reuters reported current maritime inspections increased this week "
+            "https://www.reuters.com/world/middle-east/cited-example."
+        ),
+    )
+
+
+def uncited_claim_with_source_list_result() -> GeminiDeepResearchResult:
+    """Return an uncited claim plus a source list that should not support it."""
+    return mock_gemini_result(
+        run_id="fixture-uncited-claim-source-list",
+        report=(
+            "A regional escalation will occur next quarter without a direct citation.\n"
+            "Sources:\n"
+            "- Reuters background source https://www.reuters.com/world/middle-east/background"
+        ),
+    )
+
+
+def invalid_url_source_result() -> GeminiDeepResearchResult:
+    """Return source-like metadata containing no valid URL."""
+    return mock_gemini_result(
+        run_id="fixture-invalid-url-source",
+        report=(
+            "Title: Broken source metadata\n"
+            "Publisher: Reuters\n"
+            "URL: hxxps://not-a-valid-url\n"
+            "Reuters reported current maritime inspections changed."
+        ),
+    )
+
+
+def weak_source_only_result() -> GeminiDeepResearchResult:
+    """Return a report backed only by weak/social source candidates."""
+    return mock_gemini_result(
+        run_id="fixture-weak-source-only",
+        report=(
+            "X post claimed current disruption was spreading "
+            "https://x.com/example/status/123456789."
+        ),
+    )
+
+
+def probability_like_cited_claim_result() -> GeminiDeepResearchResult:
+    """Return a cited probability-like claim that must remain quarantined."""
+    return mock_gemini_result(
+        run_id="fixture-probability-like-claim",
+        report=(
+            "There is a 70% chance of escalation this quarter "
+            "https://www.reuters.com/world/middle-east/probability-example."
+        ),
+    )
+
+
 def mock_seer_outputs() -> dict:
     """Return deterministic, minimal saved TheSeer-like outputs for comparison."""
     return {
