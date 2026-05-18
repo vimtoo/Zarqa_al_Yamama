@@ -33,6 +33,7 @@ from app.agents.governor import TheGovernor
 from app.agents.schema_validator import schema_validator
 from app.retrieval.evidence_deduper import evidence_deduper
 from app.retrieval.independence_analyzer import independence_analyzer
+from app.integrations.gemini_deep_research.graph_adapter import gemini_graph_noop_node
 from app.graph.contracts import (
     AgentOutput, ClaimItem, EvidenceItem, Signal,
     TimeHorizon, SourceType, HorizonForecast, FusionResult,
@@ -135,6 +136,7 @@ class ZarqaWorkflow:
         
         # V2 JOIN BARRIER — Ensures both adapters complete before proceeding
         workflow.add_node("v2_join_node", self._node_v2_join)
+        workflow.add_node("gemini_assist_noop", gemini_graph_noop_node)
         
         # V2 Mandatory Gate Chain (NO SHORTCUTS ALLOWED)
         workflow.add_node("schema_validator_node", self._node_schema_validator)
@@ -249,10 +251,11 @@ class ZarqaWorkflow:
                 "v2_join_node",
                 self._join_router_v2,
                 {
-                    "proceed": "schema_validator_node",
+                    "proceed": "gemini_assist_noop",
                     "wait": END
                 }
             )
+            workflow.add_edge("gemini_assist_noop", "schema_validator_node")
             
             # GATE 1 -> GATE 2: schema_validator -> evidence_deduper
             workflow.add_edge("schema_validator_node", "evidence_deduper_node")
