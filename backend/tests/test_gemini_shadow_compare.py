@@ -4,6 +4,7 @@ import os
 import sys
 from pathlib import Path
 
+sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from app.integrations.gemini_deep_research.models import (  # noqa: E402
@@ -20,6 +21,11 @@ from app.integrations.gemini_deep_research.storage import (  # noqa: E402
     save_shadow_report,
     save_shadow_run,
 )
+from fixtures.gemini_sidecar_fixtures import (  # noqa: E402
+    mock_seer_outputs,
+    mock_shadow_run,
+)
+from gemini_non_interference_utils import canonical_json_dump  # noqa: E402
 
 
 def _result(report: str) -> GeminiDeepResearchResult:
@@ -306,3 +312,49 @@ def test_malformed_or_incomplete_input_does_not_throw_unhandled_exception():
 
     assert run.evidence_comparison.gemini_evidence_count == 0
     assert run.warnings
+
+
+def test_phase4la_saved_shadow_artifact_has_expected_review_schema(tmp_path, monkeypatch):
+    monkeypatch.setenv("SEER_GEMINI_SHADOW_RUN_DIR", str(tmp_path))
+    run = mock_shadow_run(run_id="phase4la-shadow-schema", domain="policy")
+
+    path = save_shadow_run(run)
+    payload = path.read_text(encoding="utf-8")
+    parsed = load_shadow_run("phase4la-shadow-schema")
+
+    assert path == tmp_path / "phase4la-shadow-schema.json"
+    assert parsed.run_id == run.run_id
+    for required_key in (
+        "run_id",
+        "source_comparison",
+        "evidence_comparison",
+        "agent_overlap",
+        "risk_assessment",
+        "recommendation",
+        "warnings",
+        "metadata",
+    ):
+        assert required_key in payload
+    assert ("agent" + "_outputs") not in payload
+    assert "ForecastState" not in payload
+
+
+def test_phase4la_shadow_artifact_serialization_is_deterministic():
+    first = mock_shadow_run(run_id="phase4la-deterministic", domain="technology")
+    second = mock_shadow_run(run_id="phase4la-deterministic", domain="technology")
+
+    assert canonical_json_dump(first, exclusions={"timestamp"}) == canonical_json_dump(
+        second,
+        exclusions={"timestamp"},
+    )
+
+
+def test_phase4la_comparison_with_mock_fixtures_does_not_mutate_seer_outputs():
+    seer_outputs = mock_seer_outputs()
+    before = canonical_json_dump(seer_outputs)
+
+    run = GeminiShadowComparator().compare(_pack(), seer_outputs, run_id="phase4la-compare")
+
+    assert run.run_id == "phase4la-compare"
+    assert canonical_json_dump(seer_outputs) == before
+    assert ("agent" + "_outputs") not in run.model_dump_json()

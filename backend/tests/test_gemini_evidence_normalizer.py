@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import os
 import sys
+from pathlib import Path
 
+sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from app.integrations.gemini_deep_research.models import (
@@ -10,6 +12,11 @@ from app.integrations.gemini_deep_research.models import (
     GeminiDeepResearchStatus,
 )
 from app.integrations.gemini_deep_research.normalizer import GeminiEvidenceNormalizer
+from fixtures.gemini_sidecar_fixtures import (  # noqa: E402
+    duplicate_source_result,
+    malformed_missing_source_metadata_result,
+    mock_evidence_pack,
+)
 
 
 def _result(
@@ -232,3 +239,42 @@ def test_malformed_raw_report_fails_closed_without_unhandled_exception():
     assert pack.intelligence_gaps
     assert pack.claim_items == []
     assert "NO_VERIFIED_SOURCES" in _codes(pack)
+
+
+def test_phase4la_valid_mocked_evidence_pack_fixture_is_source_backed():
+    pack = mock_evidence_pack(run_id="phase4la-valid-pack", domain="security")
+
+    assert pack.provider == "gemini_deep_research"
+    assert pack.run_id == "phase4la-valid-pack"
+    assert len(pack.sources) == 2
+    assert len(pack.evidence_items) == 2
+    assert pack.claim_items
+    assert all(claim.evidence_ids for claim in pack.claim_items)
+    assert all(item.source_id for item in pack.evidence_items)
+
+
+def test_phase4la_missing_source_metadata_fails_closed_without_forecast_artifacts():
+    pack = GeminiEvidenceNormalizer().normalize_result(malformed_missing_source_metadata_result())
+    serialized = pack.model_dump_json()
+    normalizer_source = Path(
+        "backend/app/integrations/gemini_deep_research/normalizer.py"
+    ).read_text(encoding="utf-8")
+
+    assert pack.sources == []
+    assert pack.evidence_items == []
+    assert pack.claim_items == []
+    assert pack.intelligence_gaps
+    assert "NO_VERIFIED_SOURCES" in _codes(pack)
+    assert ("agent" + "_outputs") not in serialized
+    for model_name in ("Signal", "HorizonForecast", "FusionResult"):
+        assert f"{model_name}(" not in normalizer_source
+
+
+def test_phase4la_duplicate_sources_are_deterministically_deduplicated():
+    pack_a = GeminiEvidenceNormalizer().normalize_result(duplicate_source_result())
+    pack_b = GeminiEvidenceNormalizer().normalize_result(duplicate_source_result())
+
+    assert len(pack_a.sources) == 1
+    assert len(pack_a.evidence_items) == 1
+    assert pack_a.sources[0].canonical_url == "https://reuters.com/world/example"
+    assert pack_a.evidence_items[0].content_hash == pack_b.evidence_items[0].content_hash

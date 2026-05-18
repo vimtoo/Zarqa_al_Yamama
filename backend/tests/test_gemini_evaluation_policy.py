@@ -5,6 +5,7 @@ import os
 import sys
 from pathlib import Path
 
+sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from app.integrations.gemini_deep_research.evaluation_policy import (  # noqa: E402
@@ -19,6 +20,7 @@ from app.integrations.gemini_deep_research.models import (  # noqa: E402
     SourceComparison,
 )
 from app.integrations.gemini_deep_research.storage import load_shadow_runs_from_dir  # noqa: E402
+from fixtures.gemini_sidecar_fixtures import mock_shadow_run  # noqa: E402
 
 
 def _run(
@@ -286,3 +288,43 @@ def test_no_forecast_artifacts_workflow_or_agent_output_targets_are_referenced()
     assert ("agent" + "_outputs") not in source
     for model_name in ("Signal", "HorizonForecast", "FusionResult"):
         assert f"{model_name}(" not in source
+
+
+def test_phase4la_malformed_review_artifact_dict_requires_human_review_without_crash():
+    malformed_runner_artifact = {
+        "status": "mock_completed",
+        "shadow_run": {
+            "run_id": "malformed-review-artifact",
+            "source_comparison": "not an object",
+            "risk_assessment": {"overall_risk": "low"},
+        },
+    }
+
+    decision = GeminiShadowEvaluationPolicy().evaluate_runs([malformed_runner_artifact])
+
+    assert decision.recommendation == "Gemini requires human review"
+    assert decision.human_review_required is True
+    assert decision.metadata["aggregate"]["malformed_runs"] == 1
+
+
+def test_phase4la_policy_report_rendering_is_deterministic_for_same_decision():
+    policy = GeminiShadowEvaluationPolicy()
+    decision = policy.evaluate_runs(_runs(5), domain="general")
+
+    assert policy.render_policy_report(decision) == policy.render_policy_report(decision)
+
+
+def test_phase4la_loader_ignores_malformed_artifacts_and_runner_summaries(tmp_path):
+    valid = mock_shadow_run(run_id="phase4la-valid-loaded")
+    (tmp_path / "valid.json").write_text(valid.model_dump_json(), encoding="utf-8")
+    (tmp_path / "bad.json").write_text("{not json", encoding="utf-8")
+    nested = tmp_path / "runner-only"
+    nested.mkdir()
+    (nested / "runner_result.json").write_text(
+        json.dumps({"status": "mock_completed", "run_id": "runner-only"}),
+        encoding="utf-8",
+    )
+
+    loaded = load_shadow_runs_from_dir(tmp_path)
+
+    assert [run.run_id for run in loaded] == ["phase4la-valid-loaded"]

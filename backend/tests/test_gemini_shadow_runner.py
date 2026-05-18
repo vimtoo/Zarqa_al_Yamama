@@ -5,6 +5,7 @@ import os
 import sys
 from pathlib import Path
 
+sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from app.integrations.gemini_deep_research.models import (  # noqa: E402
@@ -12,6 +13,8 @@ from app.integrations.gemini_deep_research.models import (  # noqa: E402
     GeminiDeepResearchStatus,
 )
 from app.integrations.gemini_deep_research.shadow_runner import GeminiShadowRunner  # noqa: E402
+from fixtures.gemini_sidecar_fixtures import assert_sidecar_path  # noqa: E402
+from gemini_non_interference_utils import canonical_json_dump  # noqa: E402
 
 
 class FakeClient:
@@ -348,3 +351,78 @@ def test_malformed_or_incomplete_inputs_do_not_throw_unhandled_exception():
 
     assert result.status == "mock_completed"
     assert result.warnings
+
+
+def test_phase4la_saved_review_artifact_paths_remain_sidecar_local(tmp_path):
+    result = GeminiShadowRunner(client=FakeClient()).run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=tmp_path,
+    )
+
+    paths = GeminiShadowRunner(client=FakeClient()).save_outputs(result)
+
+    assert paths
+    for value in paths.values():
+        assert value is not None
+        assert_sidecar_path(value, tmp_path)
+        parts = Path(value).parts
+        assert "agent_outputs" not in parts
+        assert "forecast_outputs" not in parts
+        assert "reports" not in parts
+
+
+def test_phase4la_review_artifact_serialization_is_deterministic(tmp_path):
+    runner = GeminiShadowRunner(client=FakeClient())
+    first = runner.run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=tmp_path / "first",
+    )
+    second = runner.run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=tmp_path / "second",
+    )
+
+    first_payload = json.loads(
+        Path(first.metadata["runner_result_path"]).read_text(encoding="utf-8")
+    )
+    second_payload = json.loads(
+        Path(second.metadata["runner_result_path"]).read_text(encoding="utf-8")
+    )
+    path_exclusions = {
+        "raw_result_path",
+        "evidence_pack_path",
+        "shadow_run_json_path",
+        "shadow_report_path",
+        "runner_result_path",
+    }
+
+    assert canonical_json_dump(first_payload, exclusions=path_exclusions) == canonical_json_dump(
+        second_payload,
+        exclusions=path_exclusions,
+    )
+
+
+def test_phase4la_shadow_runner_does_not_mutate_production_like_state(tmp_path):
+    state = {
+        "agent_outputs": {"context_interpreter": {"summary": "existing"}},
+        "signals": [{"id": "sig-1"}],
+        "horizon_forecasts": [{"id": "horizon-1"}],
+        "fusion_result": {"status": "existing"},
+        "final_report": "Existing report",
+    }
+    before = canonical_json_dump(state)
+
+    GeminiShadowRunner(client=FakeClient()).run(
+        "Assess the Red Sea escalation risk.",
+        seer_outputs=_seer_outputs(),
+        mock=True,
+        output_dir=tmp_path,
+    )
+
+    assert canonical_json_dump(state) == before
